@@ -15,6 +15,8 @@
 		5A3EFDA92B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */; };
 		5A3EFDAB2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */; };
 		5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD18C852B9895C2006481ED /* SplashScreen.swift */; };
+		5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF402B98D5F40090AD14 /* LoginModel.swift */; };
+		5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF432B98D63B0090AD14 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITests.swift; sourceTree = "<group>"; };
 		5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5AD18C852B9895C2006481ED /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		5AE6AF402B98D5F40090AD14 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		5AE6AF432B98D63B0090AD14 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +100,9 @@
 		5A3EFD8C2B97999A0064BEBE /* ElixrTalentConnectApp */ = {
 			isa = PBXGroup;
 			children = (
+				5AE6AF472B98D6D30090AD14 /* Login */,
 				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
-				5A3EFD8F2B97999A0064BEBE /* LoginView.swift */,
-				5AD18C852B9895C2006481ED /* SplashScreen.swift */,
+				5AE6AF462B98D6AB0090AD14 /* SplashScreen */,
 				5A3EFD912B97999C0064BEBE /* Assets.xcassets */,
 				5A3EFD932B97999C0064BEBE /* Preview Content */,
 			);
@@ -128,6 +132,48 @@
 				5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */,
 			);
 			path = ElixrTalentConnectAppUITests;
+			sourceTree = "<group>";
+		};
+		5AE6AF3F2B98D5DB0090AD14 /* LoginModel */ = {
+			isa = PBXGroup;
+			children = (
+				5AE6AF402B98D5F40090AD14 /* LoginModel.swift */,
+			);
+			path = LoginModel;
+			sourceTree = "<group>";
+		};
+		5AE6AF422B98D6270090AD14 /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5AE6AF432B98D63B0090AD14 /* LoginViewModel.swift */,
+			);
+			path = LoginViewModel;
+			sourceTree = "<group>";
+		};
+		5AE6AF452B98D6940090AD14 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				5A3EFD8F2B97999A0064BEBE /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		5AE6AF462B98D6AB0090AD14 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5AD18C852B9895C2006481ED /* SplashScreen.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		5AE6AF472B98D6D30090AD14 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5AE6AF452B98D6940090AD14 /* LoginView */,
+				5AE6AF422B98D6270090AD14 /* LoginViewModel */,
+				5AE6AF3F2B98D5DB0090AD14 /* LoginModel */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */,
+				5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */,
 				5A3EFD902B97999A0064BEBE /* LoginView.swift in Sources */,
+				5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */,
 				5A3EFD8E2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
