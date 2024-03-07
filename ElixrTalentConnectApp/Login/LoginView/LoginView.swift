@@ -21,11 +21,12 @@ struct LoginView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 270,height: 400)
+                .padding(.top,100)
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
                     .ignoresSafeArea()
                     .foregroundColor(Color.white)
-                    .frame(width: 400, height: 550)
+                    .frame(width: 400, height: 600)
                     .shadow(radius: 10)
                 Image("backgroundIMG")
                     .resizable()
@@ -40,7 +41,7 @@ struct LoginView: View {
                         .font(.headline)
                         .padding(.leading,-118)
                     RoundedRectangle(cornerRadius: 10.0)
-                        .frame(width:300, height: 50)
+                        .frame(width:300, height: 40)
                         .foregroundStyle(Color.gray)
                         .opacity(0.5)
                         .overlay {
@@ -50,58 +51,49 @@ struct LoginView: View {
                             }
                             .padding()
                         }
+                        .padding()
                     RoundedRectangle(cornerRadius: 10.0)
-                        .frame(width:300, height: 50)
+                        .frame(width:300, height: 40)
                         .foregroundStyle(Color.gray)
                         .opacity(0.5)
                         .overlay {
                             HStack {
-                              ImageView(imageValue: "lock")
+                                ImageView(imageValue: "lock")
                                 Textfields(bindingVariable: passwordKey,placeholder: "Password")
                             }
                             .padding()
                         }
+                    Button {
+                        print("signed-in")
+                    } label: {
+                        Label(textCaptions: "Sign In")
+                            .font(.headline)
+                            .foregroundStyle(Color.white)
+                            .frame(width: 300,height: 40)
+                            .background(Color.orange)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                    }
+                    .padding()
+                    HStack{
+                        Label(textCaptions: "Don't have an account?")
+                            .foregroundStyle(Color.black)
+                        Button {
+                            print ("Signup ")
+                        } label: {
+                           Label(textCaptions: "Signup")
+                                .foregroundStyle(Color.orange)
+                                .fontWeight(.medium)
+                        }
+                    }
+                    .padding()
                     Spacer()
                 }
                 .padding(.all)
-                
-                Spacer()
             }
-            .padding(.all)
         }
     }
 }
-
 #Preview {
     LoginView()
 }
 
-
-
-struct Label: View {
-    let textCaptions :String?
-    var body: some View {
-        Text (textCaptions ??  "textCaptions")
-    }
-}
-
-struct Textfields: View {
-    @State var bindingVariable:String = ""
-    @State var placeholder:String?
-    var body: some View {
-        TextField (placeholder ?? "placeHolder", text: $bindingVariable)
-//            .frame(width: 300,height:50)
-//            .background(Color.gray)
-//            .opacity(0.5)
-//            .clipShape(RoundedRectangle(cornerRadius: 10.0))
-//            .padding()
-    }
-}
-
-struct ImageView: View {
-    @State var imageValue :String?
-    var body: some View {
-        Image(systemName: imageValue ?? "envelope")
-            .foregroundStyle(Color.orange)
-    }
-}

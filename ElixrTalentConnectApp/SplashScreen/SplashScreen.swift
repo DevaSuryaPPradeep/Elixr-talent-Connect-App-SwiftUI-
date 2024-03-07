@@ -20,11 +20,11 @@ struct SplashScreen: View {
             VStack{
                 Image("Splash Screen")
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
             }
             .onAppear{
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.asyncAfter(deadline: .now()+3){
                     isActive.toggle()
                 }
             }
