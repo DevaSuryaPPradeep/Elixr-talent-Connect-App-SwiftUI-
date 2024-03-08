@@ -8,7 +8,8 @@
 import Foundation
 
 /// Model for Login
-struct LoginModel {
-    let userID :String?
-    let passwordID :String?
+struct LoginModel:Identifiable {
+    let id: String = UUID().uuidString
+    let userID :String 
+    let passwordID :String
 }

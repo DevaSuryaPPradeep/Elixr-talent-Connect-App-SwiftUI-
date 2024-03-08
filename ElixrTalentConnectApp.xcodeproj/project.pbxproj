@@ -21,6 +21,8 @@
 		5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD18C852B9895C2006481ED /* SplashScreen.swift */; };
 		5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF402B98D5F40090AD14 /* LoginModel.swift */; };
 		5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF432B98D63B0090AD14 /* LoginViewModel.swift */; };
+		5AF53C7B2B9B0A9500DF576A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF53C7A2B9B0A9500DF576A /* StringExtensions.swift */; };
+		5AF53C7E2B9B14C900DF576A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF53C7D2B9B14C900DF576A /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		5AD18C852B9895C2006481ED /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		5AE6AF402B98D5F40090AD14 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5AE6AF432B98D63B0090AD14 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5AF53C7A2B9B0A9500DF576A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		5AF53C7D2B9B14C900DF576A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		5A3EFD8C2B97999A0064BEBE /* ElixrTalentConnectApp */ = {
 			isa = PBXGroup;
 			children = (
+				5AF53C7C2B9B0A9D00DF576A /* Extensions */,
 				5A4BA4492B9983BD00C3C813 /* CustomUIElements */,
 				5AE6AF472B98D6D30090AD14 /* Login */,
 				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				5A3EFD8F2B97999A0064BEBE /* LoginView.swift */,
+				5AF53C7D2B9B14C900DF576A /* SignUpView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -194,6 +200,14 @@
 				5AE6AF3F2B98D5DB0090AD14 /* LoginModel */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		5AF53C7C2B9B0A9D00DF576A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AF53C7A2B9B0A9500DF576A /* StringExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +342,10 @@
 			files = (
 				5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */,
 				5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */,
+				5AF53C7B2B9B0A9500DF576A /* StringExtensions.swift in Sources */,
 				5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */,
 				5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */,
+				5AF53C7E2B9B14C900DF576A /* SignUpView.swift in Sources */,
 				5A4BA4512B99D77000C3C813 /* PasswordField.swift in Sources */,
 				5A3EFD902B97999A0064BEBE /* LoginView.swift in Sources */,
 				5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */,

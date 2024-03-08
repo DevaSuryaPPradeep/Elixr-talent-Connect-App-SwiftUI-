@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import LocalAuthentication
+
 
 /// View
 struct LoginView: View {
@@ -13,22 +15,26 @@ struct LoginView: View {
     /// Variable declarations.
     @State var userIDValue: String = ""
     @State var passwordKey: String = ""
-    
+    @StateObject var viewModelInstance = LoginViewModel()
+    @State var isValid: Bool = false
+    @State var alertVariable: Bool = false
     var body: some View {
-        VStack{
-            headerView
-            ZStack {
-                RoundedRectangleView
-                BackGroundImage()
-                VStack {
-                    HeadingView
-                    emailView
-                    passwordView
-                    signInButton
-                    signUpPrompt
-                    Spacer()
+        NavigationStack{
+            VStack{
+                headerView
+                ZStack {
+                    RoundedRectangleView
+                    BackGroundImage()
+                    VStack {
+                        HeadingView
+                        emailView
+                        passwordView
+                        signInButton
+                        signUpPrompt
+                        Spacer()
+                    }
+                    .padding(.all)
                 }
-                .padding(.all)
             }
         }
     }
@@ -94,7 +100,7 @@ struct LoginView: View {
     /// signInButton - contains signinButton
     private var signInButton :some View {
         Button {
-            print("signed-in")
+            
         } label: {
             Label(textCaptions: "Sign In")
                 .font(.headline)
@@ -103,7 +109,7 @@ struct LoginView: View {
                 .background(Color.orange)
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
         }
-        .padding()
+                .padding()
     }
     /// Signuprompt -  contains label and a sign in button.
     private var signUpPrompt :some View {
@@ -111,13 +117,13 @@ struct LoginView: View {
             Label(textCaptions: "Don't have an account?")
                 .foregroundStyle(Color.black)
             Button {
-                print ("Signup ")
+                
             } label: {
                 Label(textCaptions: "Signup")
                     .foregroundStyle(Color.orange)
                     .fontWeight(.medium)
             }
-            //            .padding()
+           
             Spacer()
         }
         .padding(.leading,60)
@@ -135,5 +141,24 @@ struct LoginView: View {
 #Preview {
     LoginView()
 }
-
-
+extension  LoginView {
+    //Authentication  for signin
+    func toAuthenticate()->String {
+        let loginModel = LoginModel(userID: userIDValue, passwordID: passwordKey)
+        let validationResult = viewModelInstance.validateUserCredentials(model: loginModel)
+        if validationResult.isValid {
+            viewModelInstance.authenticateWithBiometrics { [self] (success, error) in
+                if success {
+                    isValid.toggle()
+                } else {
+                    if error != nil {
+                        alertVariable.toggle()
+                    }
+                }
+            }
+        } else {
+            alertVariable.toggle()
+        }
+        return  validationResult.message ?? "nil"
+    }
+}
