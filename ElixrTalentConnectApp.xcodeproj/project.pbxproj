@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1689E72BA164550076D80D /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689E62BA164550076D80D /* LogoImage.swift */; };
+		5A1689E92BA184BE0076D80D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689E82BA184BE0076D80D /* HomeView.swift */; };
 		5A3EFD8E2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */; };
 		5A3EFD902B97999A0064BEBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFD8F2B97999A0064BEBE /* LoginView.swift */; };
 		5A3EFD922B97999C0064BEBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFD912B97999C0064BEBE /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1689E62BA164550076D80D /* LogoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoImage.swift; path = ElixrTalentConnectApp/Login/LoginView/LogoImage.swift; sourceTree = SOURCE_ROOT; };
+		5A1689E82BA184BE0076D80D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5A3EFD8A2B97999A0064BEBE /* ElixrTalentConnectApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElixrTalentConnectApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppApp.swift; sourceTree = "<group>"; };
 		5A3EFD8F2B97999A0064BEBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -89,6 +93,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A1689EA2BA184C60076D80D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5A1689E82BA184BE0076D80D /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5A1689EB2BA184DC0076D80D /* SignIN */ = {
+			isa = PBXGroup;
+			children = (
+				5AF53C7D2B9B14C900DF576A /* SignUpView.swift */,
+			);
+			path = SignIN;
+			sourceTree = "<group>";
+		};
 		5A3EFD812B97999A0064BEBE = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +134,8 @@
 			children = (
 				5AF53C7C2B9B0A9D00DF576A /* Extensions */,
 				5A4BA4492B9983BD00C3C813 /* CustomUIElements */,
+				5A1689EB2BA184DC0076D80D /* SignIN */,
+				5A1689EA2BA184C60076D80D /* Home */,
 				5AE6AF472B98D6D30090AD14 /* Login */,
 				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
 				5AE6AF462B98D6AB0090AD14 /* SplashScreen */,
@@ -151,6 +173,7 @@
 		5A4BA4492B9983BD00C3C813 /* CustomUIElements */ = {
 			isa = PBXGroup;
 			children = (
+				5A1689E62BA164550076D80D /* LogoImage.swift */,
 				5A4BA44A2B9983FB00C3C813 /* Label.swift */,
 				5A4BA44E2B99844D00C3C813 /* IconImage.swift */,
 				5A4BA44C2B99842300C3C813 /* TextField.swift */,
@@ -179,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				5A3EFD8F2B97999A0064BEBE /* LoginView.swift */,
-				5AF53C7D2B9B14C900DF576A /* SignUpView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -342,10 +364,12 @@
 			files = (
 				5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */,
 				5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */,
+				5A1689E92BA184BE0076D80D /* HomeView.swift in Sources */,
 				5AF53C7B2B9B0A9500DF576A /* StringExtensions.swift in Sources */,
 				5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */,
 				5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */,
 				5AF53C7E2B9B14C900DF576A /* SignUpView.swift in Sources */,
+				5A1689E72BA164550076D80D /* LogoImage.swift in Sources */,
 				5A4BA4512B99D77000C3C813 /* PasswordField.swift in Sources */,
 				5A3EFD902B97999A0064BEBE /* LoginView.swift in Sources */,
 				5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */,
@@ -516,6 +540,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ElixrTalentConnectApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authentication using faceID.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -544,6 +569,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ElixrTalentConnectApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authentication using faceID.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

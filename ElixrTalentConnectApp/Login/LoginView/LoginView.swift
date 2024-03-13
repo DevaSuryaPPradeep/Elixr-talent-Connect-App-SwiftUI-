@@ -8,7 +8,6 @@
 import SwiftUI
 import LocalAuthentication
 
-
 /// View
 struct LoginView: View {
     
@@ -18,6 +17,9 @@ struct LoginView: View {
     @StateObject var viewModelInstance = LoginViewModel()
     @State var isValid: Bool = false
     @State var alertVariable: Bool = false
+    @State var message :String = ""
+    @State var signUpBool :Bool = false
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -42,12 +44,7 @@ struct LoginView: View {
     /// headerView which contains the logo image
     private var headerView: some View {
         Group {
-            Spacer()
-            Image("Logo 1")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 270,height: 400)
-                .padding(.top,100)
+            LogoImage(logoName: "Logo 1",width:275, height: 400)
         }
     }
     /// Rounded rectangle view which act as a container for other UI elements.
@@ -75,7 +72,7 @@ struct LoginView: View {
         HStack {
             ImageView(imageValue: "envelope")
                 .padding(3)
-            Textfields(bindingVariable: userIDValue,placeholder: "Email")
+            Textfields(bindingVariable: $userIDValue,placeholder: "Email")
         }
         .frame(width: 300,height: 40)
         .background(Color.white)
@@ -89,7 +86,7 @@ struct LoginView: View {
         HStack {
             ImageView(imageValue: "lock")
                 .padding(3)
-            passwordField()
+         passwordField(passwordVariable: $passwordKey)
         } .frame(width: 300,height: 40)
             .background(Color.white)
             .border(Color.gray, width: 1)
@@ -100,16 +97,34 @@ struct LoginView: View {
     /// signInButton - contains signinButton
     private var signInButton :some View {
         Button {
-            
-        } label: {
-            Label(textCaptions: "Sign In")
-                .font(.headline)
-                .foregroundStyle(Color.white)
-                .frame(width: 300,height: 40)
-                .background(Color.orange)
-                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-        }
-                .padding()
+            let validationResult = viewModelInstance.validateUserCredentials(model: LoginModel(userID: userIDValue, passwordID: passwordKey))
+            if validationResult.isValid {
+                viewModelInstance.authenticateWithBiometrics {  (success, error) in
+                    if success {
+                        print("Authentivation successful")
+                        isValid.toggle()
+                    } else {
+                        print("Authentivation Failed")
+                    }
+                }
+            } else {
+                message = validationResult.message ?? "error"
+                alertVariable.toggle()
+            }} label: {
+                Label(textCaptions: "Sign In")
+                    .font(.headline)
+                    .foregroundStyle(Color.white)
+                    .frame(width: 300,height: 40)
+                    .background(Color.orange)
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            }
+            .alert(isPresented: $alertVariable, content: {
+                Alert(title: Text("Alert"),message: Text(message),dismissButton: .cancel())
+            })
+            .navigationDestination(isPresented: $isValid, destination: {
+               HomeView()
+            })
+            .padding()
     }
     /// Signuprompt -  contains label and a sign in button.
     private var signUpPrompt :some View {
@@ -117,13 +132,15 @@ struct LoginView: View {
             Label(textCaptions: "Don't have an account?")
                 .foregroundStyle(Color.black)
             Button {
-                
+                signUpBool.toggle()
             } label: {
                 Label(textCaptions: "Signup")
                     .foregroundStyle(Color.orange)
                     .fontWeight(.medium)
             }
-           
+            .navigationDestination(isPresented: $signUpBool) {
+                SignUpView()
+            }
             Spacer()
         }
         .padding(.leading,60)
@@ -137,28 +154,9 @@ struct LoginView: View {
                 .ignoresSafeArea()
         }
     }
+    
 }
 #Preview {
     LoginView()
 }
-extension  LoginView {
-    //Authentication  for signin
-    func toAuthenticate()->String {
-        let loginModel = LoginModel(userID: userIDValue, passwordID: passwordKey)
-        let validationResult = viewModelInstance.validateUserCredentials(model: loginModel)
-        if validationResult.isValid {
-            viewModelInstance.authenticateWithBiometrics { [self] (success, error) in
-                if success {
-                    isValid.toggle()
-                } else {
-                    if error != nil {
-                        alertVariable.toggle()
-                    }
-                }
-            }
-        } else {
-            alertVariable.toggle()
-        }
-        return  validationResult.message ?? "nil"
-    }
-}
+

@@ -10,8 +10,9 @@ import SwiftUI
 
 /// Passwordfiefd.
 struct passwordField: View {
-    @State var passwordVariable :String = ""
+    @Binding var passwordVariable :String 
+    let placeHolder :String = ""
     var body: some View {
-        SecureField("Password", text: $passwordVariable)
+        SecureField(placeHolder, text: $passwordVariable)
     }
 }

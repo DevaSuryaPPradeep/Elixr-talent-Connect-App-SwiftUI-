@@ -10,6 +10,6 @@ import Foundation
 /// Model for Login
 struct LoginModel:Identifiable {
     let id: String = UUID().uuidString
-    let userID :String 
+    let userID :String
     let passwordID :String
 }
