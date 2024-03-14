@@ -25,9 +25,12 @@ struct  SecureFields :View {
                         HStack {
                             if  hidePassword {
                                 Textfields(bindingVariable: $secureFieldDetails, placeholder: viewModel.placeHolder)
+                                    .padding(.bottom,5)
                             }
                             else {
                                 passwordField(passwordVariable: $secureFieldDetails, placeHolder: viewModel.placeHolder)
+                                    .padding(.top,-5)
+
                             }
                             Button{
                                 hidePassword.toggle()

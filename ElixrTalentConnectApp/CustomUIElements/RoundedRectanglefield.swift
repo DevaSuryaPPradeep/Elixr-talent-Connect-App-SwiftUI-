@@ -20,8 +20,8 @@ struct RoundedRectangles: View {
                 VStack(alignment: .leading, content: {
                     Label(textCaptions: viewmodel.title)
                     Textfields(bindingVariable: $detailValue, placeholder:viewmodel.placeHolder)
-                        .textFieldStyle(.roundedBorder)
                         .keyboardType(.emailAddress)
+                        .padding(.top,-5)
                 })
             }
             .padding()
