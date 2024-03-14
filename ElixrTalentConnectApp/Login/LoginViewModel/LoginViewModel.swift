@@ -28,7 +28,8 @@ class LoginViewModel :ObservableObject {
         guard model.passwordID.count >= 8 else {
             return (false, "Password must be at least 8 characters long.")
         }
-        guard model.passwordID.validPassword() else {
+//        password.contains(where: { $0.isLetter }), password.contains(where: { $0.isNumber })
+        guard isAlphanumeric(model.passwordID)else {
             return (false, "Password must contain alphanumeric characters.")
         }
         // If all checks pass, credentials are valid
@@ -49,6 +50,17 @@ class LoginViewModel :ObservableObject {
         } else {
             completion(false, error)
         }
+    }
+    
+    
+    //MARK: -  Alphanumeric authentication functions.
+    /// isAlphanumeric - fuction is used to perform alphanumeric authentications.
+    /// - Parameter string:type String received from the password textfield
+    /// - Returns: return is of type  bool
+    func isAlphanumeric(_ string: String) -> Bool {
+        let letterSet = CharacterSet.letters
+        let digitSet = CharacterSet.decimalDigits
+        return !string.isEmpty && string.rangeOfCharacter(from: letterSet) != nil && string.rangeOfCharacter(from: digitSet) != nil
     }
 }
 

@@ -24,7 +24,7 @@ class SignUpViewModel :ObservableObject {
         guard password.count >= 8  else{
             return (false, "Password must be of lenght 8.")
         }
-        guard password.validPassword() else{
+        guard isAlphanumeric(password) else{
             return (false, "Password must contain alphanumeric characters.")
         }
         guard  password == confirmPassword else{
@@ -34,4 +34,14 @@ class SignUpViewModel :ObservableObject {
     }
         
     
+    
+    //MARK: -  Alphanumeric authentication functions.
+    /// isAlphanumeric - fuction is used to perform alphanumeric authentications.
+    /// - Parameter string:type String received from the password textfield
+    /// - Returns: return is of type  bool
+    func isAlphanumeric(_ string: String) -> Bool {
+        let letterSet = CharacterSet.letters
+        let digitSet = CharacterSet.decimalDigits
+        return !string.isEmpty && string.rangeOfCharacter(from: letterSet) != nil && string.rangeOfCharacter(from: digitSet) != nil
+    }
 }

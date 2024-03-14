@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0C50812BA302B900079401 /* RoundedRectanglefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0C50802BA302B900079401 /* RoundedRectanglefield.swift */; };
+		5A0C50832BA302EF00079401 /* RoundedSecurefields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0C50822BA302EF00079401 /* RoundedSecurefields.swift */; };
+		5A0C50892BA30D2900079401 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0C50882BA30D2900079401 /* SignUpView.swift */; };
 		5A1689E72BA164550076D80D /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689E62BA164550076D80D /* LogoImage.swift */; };
 		5A1689E92BA184BE0076D80D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689E82BA184BE0076D80D /* HomeView.swift */; };
 		5A1689EF2BA1B23B0076D80D /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689EE2BA1B23B0076D80D /* SignUpModel.swift */; };
@@ -22,7 +25,6 @@
 		5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44C2B99842300C3C813 /* TextField.swift */; };
 		5A4BA44F2B99844D00C3C813 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44E2B99844D00C3C813 /* IconImage.swift */; };
 		5A4BA4512B99D77000C3C813 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA4502B99D77000C3C813 /* PasswordField.swift */; };
-		5AC20D4E2BA2DD7D00A6CB24 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC20D4D2BA2DD7D00A6CB24 /* SignUpView.swift */; };
 		5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD18C852B9895C2006481ED /* SplashScreen.swift */; };
 		5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */; };
 		5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF402B98D5F40090AD14 /* LoginModel.swift */; };
@@ -48,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A0C50802BA302B900079401 /* RoundedRectanglefield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectanglefield.swift; sourceTree = "<group>"; };
+		5A0C50822BA302EF00079401 /* RoundedSecurefields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedSecurefields.swift; sourceTree = "<group>"; };
+		5A0C50882BA30D2900079401 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = ElixrTalentConnectApp/SignIN/ViewModel/View/SignUpView.swift; sourceTree = SOURCE_ROOT; };
 		5A1689E62BA164550076D80D /* LogoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoImage.swift; path = ElixrTalentConnectApp/Login/LoginView/LogoImage.swift; sourceTree = SOURCE_ROOT; };
 		5A1689E82BA184BE0076D80D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5A1689EE2BA1B23B0076D80D /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		5A4BA44C2B99842300C3C813 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		5A4BA44E2B99844D00C3C813 /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		5A4BA4502B99D77000C3C813 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
-		5AC20D4D2BA2DD7D00A6CB24 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		5AD18C852B9895C2006481ED /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithTitle.swift; sourceTree = "<group>"; };
 		5AE6AF402B98D5F40090AD14 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A0C50852BA3078A00079401 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A0C50882BA30D2900079401 /* SignUpView.swift */,
+			);
+			name = View;
+			path = ViewModel/View;
+			sourceTree = "<group>";
+		};
 		5A1689EA2BA184C60076D80D /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,19 +123,11 @@
 		5A1689EB2BA184DC0076D80D /* SignIN */ = {
 			isa = PBXGroup;
 			children = (
-				5A1689EC2BA1B21C0076D80D /* View */,
+				5A0C50852BA3078A00079401 /* View */,
 				5A1689F02BA1B5300076D80D /* ViewModel */,
 				5A1689ED2BA1B2230076D80D /* Model */,
 			);
 			path = SignIN;
-			sourceTree = "<group>";
-		};
-		5A1689EC2BA1B21C0076D80D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5AC20D4D2BA2DD7D00A6CB24 /* SignUpView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5A1689ED2BA1B2230076D80D /* Model */ = {
@@ -164,13 +169,13 @@
 		5A3EFD8C2B97999A0064BEBE /* ElixrTalentConnectApp */ = {
 			isa = PBXGroup;
 			children = (
-				5AF53C7C2B9B0A9D00DF576A /* Extensions */,
-				5A4BA4492B9983BD00C3C813 /* CustomUIElements */,
+				5AE6AF472B98D6D30090AD14 /* Login */,
 				5A1689EB2BA184DC0076D80D /* SignIN */,
 				5A1689EA2BA184C60076D80D /* Home */,
-				5AE6AF472B98D6D30090AD14 /* Login */,
-				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
+				5AF53C7C2B9B0A9D00DF576A /* Extensions */,
+				5A4BA4492B9983BD00C3C813 /* CustomUIElements */,
 				5AE6AF462B98D6AB0090AD14 /* SplashScreen */,
+				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
 				5A3EFD912B97999C0064BEBE /* Assets.xcassets */,
 				5A3EFD932B97999C0064BEBE /* Preview Content */,
 			);
@@ -206,7 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				5A1689E62BA164550076D80D /* LogoImage.swift */,
+				5A0C50822BA302EF00079401 /* RoundedSecurefields.swift */,
 				5A4BA44A2B9983FB00C3C813 /* Label.swift */,
+				5A0C50802BA302B900079401 /* RoundedRectanglefield.swift */,
 				5A4BA44E2B99844D00C3C813 /* IconImage.swift */,
 				5A4BA44C2B99842300C3C813 /* TextField.swift */,
 				5A4BA4502B99D77000C3C813 /* PasswordField.swift */,
@@ -398,16 +405,18 @@
 				5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */,
 				5A1689EF2BA1B23B0076D80D /* SignUpModel.swift in Sources */,
 				5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */,
+				5A0C50812BA302B900079401 /* RoundedRectanglefield.swift in Sources */,
 				5A1689E92BA184BE0076D80D /* HomeView.swift in Sources */,
+				5A0C50892BA30D2900079401 /* SignUpView.swift in Sources */,
 				5AF53C7B2B9B0A9500DF576A /* StringExtensions.swift in Sources */,
 				5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */,
+				5A0C50832BA302EF00079401 /* RoundedSecurefields.swift in Sources */,
 				5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */,
 				5A1689F22BA1B5700076D80D /* SignUpViewModel.swift in Sources */,
 				5A1689E72BA164550076D80D /* LogoImage.swift in Sources */,
 				5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */,
 				5A4BA4512B99D77000C3C813 /* PasswordField.swift in Sources */,
 				5A3EFD902B97999A0064BEBE /* LoginView.swift in Sources */,
-				5AC20D4E2BA2DD7D00A6CB24 /* SignUpView.swift in Sources */,
 				5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */,
 				5A4BA44F2B99844D00C3C813 /* IconImage.swift in Sources */,
 				5A3EFD8E2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift in Sources */,
