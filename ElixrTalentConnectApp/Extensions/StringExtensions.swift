@@ -8,8 +8,8 @@
 import Foundation
 extension String {
     
-    /// isValidEmail - this Regex functionality is used to validify the email typed in by the username
-    /// - Returns: returns true  if the mandidate criterias are met in the validation check, and returns false while the meandidate fields are not found based on this return type alert is triggered.
+    /// isValidEmail - aregex method for validating user inputs.
+    /// - Returns: bool
     func isValidEmail() -> Bool {
         let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
         let range = NSRange(location: 0, length: count)
@@ -19,8 +19,8 @@ extension String {
         return false
     }
     
-    /// validPassword - this functionality is used to validy the passworf entry of the user
-    /// - Returns: Returns a boolean value , based on the presence of the alphanumeric values the return value is determined , and on returning a false value an alert is trigered.
+    /// validPassword - this is to valdify thr password whether it contains any of alpha numeric values.
+    /// - Returns: bool - returns true when the password contains thr alphanumeric characters.
     func  validPassword () -> Bool {
         guard !isEmpty else {
             return false

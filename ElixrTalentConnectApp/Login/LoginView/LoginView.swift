@@ -29,8 +29,13 @@ struct LoginView: View {
                     BackGroundImage()
                     VStack {
                         HeadingView
-                        emailView
-                        passwordView
+                        Spacer()
+                        Group{
+                            emailView
+                                .padding(.top,-50)
+                            passwordView
+                        }
+                        .padding(.top,-50)
                         signInButton
                         signUpPrompt
                         Spacer()
@@ -67,10 +72,11 @@ struct LoginView: View {
                 .padding(.leading,-118)
         }
     }
+    
     /// emailView - give user acessible  email fields.
     private var emailView:some View {
         HStack {
-            ImageView(imageValue: "envelope")
+            IconImage(imageValue: "envelope")
                 .padding(3)
             Textfields(bindingVariable: $userIDValue,placeholder: "Email")
         }
@@ -84,9 +90,9 @@ struct LoginView: View {
     /// PassswordView - contains user interactable password fields.
     private var passwordView :some View {
         HStack {
-            ImageView(imageValue: "lock")
+            IconImage(imageValue: "lock")
                 .padding(3)
-         passwordField(passwordVariable: $passwordKey)
+            passwordField(passwordVariable: $passwordKey, placeHolder: "Enter the password here.")
         } .frame(width: 300,height: 40)
             .background(Color.white)
             .border(Color.gray, width: 1)
@@ -122,10 +128,11 @@ struct LoginView: View {
                 Alert(title: Text("Alert"),message: Text(message),dismissButton: .cancel())
             })
             .navigationDestination(isPresented: $isValid, destination: {
-               HomeView()
+                HomeView()
             })
             .padding()
     }
+    
     /// Signuprompt -  contains label and a sign in button.
     private var signUpPrompt :some View {
         HStack{
@@ -145,6 +152,7 @@ struct LoginView: View {
         }
         .padding(.leading,60)
     }
+    
     /// BackGroundImage
     struct BackGroundImage: View {
         var body: some View {

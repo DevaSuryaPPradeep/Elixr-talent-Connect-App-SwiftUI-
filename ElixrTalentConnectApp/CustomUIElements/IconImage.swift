@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct ImageView: View {
-    @State var imageValue :String?
+struct IconImage: View {
+     var imageValue :String?
     var body: some View {
         Image(systemName: imageValue ?? "envelope")
             .foregroundStyle(Color.orange)
