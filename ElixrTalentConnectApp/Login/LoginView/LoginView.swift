@@ -62,15 +62,15 @@ struct LoginView: View {
     }
     /// Heading to the user interactivew
     private var HeadingView:some View {
-        Group{
+        VStack(spacing: 10, content: {
             Label(textCaptions: "Login")
                 .font(.title)
                 .bold()
-                .padding(.leading,-150)
+                .padding(.leading,-88)
             Label(textCaptions: "Please sign-in to login.")
                 .font(.headline)
-                .padding(.leading,-118)
-        }
+                   })
+        .padding(.init(top: 10.0, leading: -80, bottom: 1, trailing: 20))
     }
     
     /// emailView - give user acessible  email fields.
@@ -79,11 +79,12 @@ struct LoginView: View {
             IconImage(imageValue: "envelope")
                 .padding(3)
             Textfields(bindingVariable: $userIDValue,placeholder: "Email")
+//                .textFieldStyle(.roundedBorder)
         }
         .frame(width: 300,height: 40)
         .background(Color.white)
-        .border(Color.gray, width: 1)
-        .opacity(0.4)
+        .clipShape(RoundedRectangle(cornerRadius: 5))
+        .border(Color.gray,width: 1)
         .cornerRadius(10.0)
         .padding()
     }
@@ -93,10 +94,10 @@ struct LoginView: View {
             IconImage(imageValue: "lock")
                 .padding(3)
             passwordField(passwordVariable: $passwordKey, placeHolder: "Enter the password here.")
-        } .frame(width: 300,height: 40)
+        }  .frame(width: 300,height: 40)
             .background(Color.white)
-            .border(Color.gray, width: 1)
-            .opacity(0.4)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
+            .border(Color.gray,width: 1)
             .cornerRadius(10.0)
             .padding()
     }
@@ -104,7 +105,9 @@ struct LoginView: View {
     private var signInButton :some View {
         Button {
             let validationResult = viewModelInstance.validateUserCredentials(model: LoginModel(userID: userIDValue, passwordID: passwordKey))
-            if validationResult.isValid {
+            isValid.toggle()
+            // TODO: Uncomment this
+            /*if validationResult.isValid {
                 viewModelInstance.authenticateWithBiometrics {  (success, error) in
                     if success {
                         print("Authentivation successful")
@@ -116,7 +119,7 @@ struct LoginView: View {
             } else {
                 message = validationResult.message ?? "error"
                 alertVariable.toggle()
-            }} label: {
+            }*/} label: {
                 Label(textCaptions: "Sign In")
                     .font(.headline)
                     .foregroundStyle(Color.white)
