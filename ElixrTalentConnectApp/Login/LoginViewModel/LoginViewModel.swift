@@ -41,7 +41,6 @@ class LoginViewModel :ObservableObject {
     func authenticateWithBiometrics(completion: @escaping (Bool, Error?) -> Void) {
         let context = LAContext()
         var error: NSError?
-
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Authenticate with Biometrics") { (success, evalError) in
                 DispatchQueue.main.async {

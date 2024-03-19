@@ -16,6 +16,18 @@ struct HomeView: View {
                 List(viewModelInstance.jobArray) {value in
                     Text(value.title)
                 }
+                Button{
+                    viewModelInstance.postJobs()
+                        
+                }label: {
+                    Text("Post")
+                        .foregroundStyle(Color.white)
+                        .clipShape(Rectangle())
+                        .frame(width: 80,height: 40)
+                        .background(Color.blue)
+                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 5.0, height: 5.0)))
+                }
+                Spacer()
             }
             .onAppear{
                 viewModelInstance.fetchData()
@@ -26,9 +38,6 @@ struct HomeView: View {
         }
         .navigationBarBackButtonHidden()
     }
-       
-    
-        
 }
 
 #Preview {

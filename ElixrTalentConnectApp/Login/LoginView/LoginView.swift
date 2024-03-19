@@ -79,7 +79,6 @@ struct LoginView: View {
             IconImage(imageValue: "envelope")
                 .padding(3)
             Textfields(bindingVariable: $userIDValue,placeholder: "Email")
-//                .textFieldStyle(.roundedBorder)
         }
         .frame(width: 300,height: 40)
         .background(Color.white)
@@ -105,9 +104,8 @@ struct LoginView: View {
     private var signInButton :some View {
         Button {
             let validationResult = viewModelInstance.validateUserCredentials(model: LoginModel(userID: userIDValue, passwordID: passwordKey))
-            isValid.toggle()
-            // TODO: Uncomment this
-            /*if validationResult.isValid {
+           
+            if validationResult.isValid {
                 viewModelInstance.authenticateWithBiometrics {  (success, error) in
                     if success {
                         print("Authentivation successful")
@@ -119,7 +117,7 @@ struct LoginView: View {
             } else {
                 message = validationResult.message ?? "error"
                 alertVariable.toggle()
-            }*/} label: {
+            }} label: {
                 Label(textCaptions: "Sign In")
                     .font(.headline)
                     .foregroundStyle(Color.white)

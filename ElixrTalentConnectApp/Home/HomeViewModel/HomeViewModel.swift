@@ -11,29 +11,41 @@ class HomeViewModel:ObservableObject {
     @Published var alertValue :Bool = false
     @Published var jobArray :[Jobs] = []
     
+    //APIManager.shared.getData(endPoint: .getJobs){ [weak self] (response:Result<JobResponse,NetworkErrors>) in
+    func fetchData() {
+        APIManager.shared.getJobs(postData: nil, endPoint: .getJobs) { [weak self] (response: Result<JobResponse?, NetworkErrors>)in
+               guard let self = self else {
+                   return
+               }
+               switch response {
+               case .success(let result):
+                   DispatchQueue.main.async {
+                       if let jobs = result?.jobs {
+                           self.jobArray = jobs
+                           print("Arraycount-->\(self.jobArray.count)")
+                       }
+                       print("Success")
+                   }
+               case .failure(let error):
+                   DispatchQueue.main.async {
+                       self.alertValue.toggle()
+                       print("Failure", error)
+                   }
+               }
+        }
+    }
     
-    func fetchData()->(){
-        APIManager.shared.getData(endPoint: .getJobs){ [weak self] (response:Result<JobResponse,NetworkErrors>) in
-            guard let self = self
-            else {
-                return
-            }
+    
+    func postJobs() {
+        APIManager.shared.getJobs(postData: postDataInstance, endPoint: .postJobs) { (response:Result<JobResponse?, NetworkErrors> ) in
             switch response {
-            case .success(let result) :
-                DispatchQueue.main.async {
-                    print("Succes result value-->\(result)")
-          
-                    self.jobArray = result.jobs
-                    
-                print("Success")
-                }
+            case .success(let result) : 
+                print("job submitted")
+                
                 break
-            case .failure(_):
-                DispatchQueue.main.async {
-                    self.alertValue.toggle()
-                    print("failure",NetworkErrors.custom("error"))
-                }
-                break
+                
+            case .failure(let errorMessage):
+                print("job submission failed with error: \(errorMessage)")
             }
         }
     }

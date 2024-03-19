@@ -7,20 +7,35 @@
 
 import Foundation
 final class APIManager {
-   // "http://localhost:9001/elixr/jobs"
     static let shared = APIManager()
     let baseURL :String = "http://localhost:9001/elixr"
     private init() {}
-    
-    
-    
-    func getData<T:Codable> (endPoint:EndPoints,completion:@escaping((Result<T,NetworkErrors>)->())){
-      
-        guard let urlRequest = getURLRequest(endpoint:endPoint)else{
-            completion(.failure(NetworkErrors.invaidURL))
+  
+    func getJobs<T:Codable> (postData:PostData?,endPoint:EndPoints,completion:@escaping((Result<T,NetworkErrors>)->())){
+    let URLString = baseURL + endPoint.rawValue
+        guard let url = URL(string: URLString) else {
             return
         }
-        URLSession.shared.dataTask(with: urlRequest)
+        var URLValue =  URLRequest(url: url)
+        URLValue.httpMethod = endPoint.httpMethod
+        URLValue.setValue("application/json", forHTTPHeaderField: "Accept")
+        URLValue.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        if endPoint.httpMethod == "POST" {
+            guard let responseData = postData else {
+                completion(.failure(.invalidData))
+                return
+            }
+            do {
+                print("responseData---->\(responseData)")
+                let resultantData =  try JSONEncoder().encode(responseData)
+                URLValue.httpBody = resultantData
+            }
+            catch {
+               print("Error while encoding")
+                completion(.failure(.custom("Error while encoding")))
+            }
+        }
+        URLSession.shared.dataTask(with: URLValue)
         {
             (data, response, error) in
             if let error = error {
@@ -54,23 +69,24 @@ final class APIManager {
                 print("\(error.localizedDescription)")
                 return
             }
+            
         }
         .resume()
     }
-        
-        func getURLRequest(endpoint:EndPoints) -> URLRequest? {
-            let URLString = baseURL + endpoint.rawValue
-            guard let url = URL(string: URLString) else {
-                return nil
-            }
-            var URLValue =  URLRequest(url: url)
-            URLValue.httpMethod = endpoint.httpMethod
-            URLValue.setValue("application/json", forHTTPHeaderField: "Accept")
-            URLValue.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            return URLValue
+    
+    func getURLRequest(endpoint:EndPoints) -> URLRequest? {
+        let URLString = baseURL + endpoint.rawValue
+        guard let url = URL(string: URLString) else {
+            return nil
         }
-        
+        var URLValue =  URLRequest(url: url)
+        URLValue.httpMethod = endpoint.httpMethod
+        URLValue.setValue("application/json", forHTTPHeaderField: "Accept")
+        URLValue.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        return URLValue
     }
+    
+}
 
 enum NetworkErrors :Error {
     case invaidURL
@@ -81,16 +97,19 @@ enum NetworkErrors :Error {
     case custom(String)
 }
 
-
-
 enum EndPoints: String {
     case getJobs = "/jobs"
-      var httpMethod: String {
+    case postJobs  = "/applyJobs"
+    
+    var httpMethod: String {
         switch self {
-                case .getJobs:
+        case .getJobs:
             "GET"
+        case .postJobs:
+            "POST"
         }
     }
 }
+
 
 
