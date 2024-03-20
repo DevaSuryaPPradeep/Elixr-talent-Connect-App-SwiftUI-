@@ -7,12 +7,11 @@
 
 import Foundation
 
-/// Viewmodel for homeView.
 class HomeViewModel:ObservableObject {
-    /// Variable decalartions
     @Published var alertValue :Bool = false
     @Published var jobArray :[Jobs] = []
     
+    //APIManager.shared.getData(endPoint: .getJobs){ [weak self] (response:Result<JobResponse,NetworkErrors>) in
     func fetchData() {
         APIManager.shared.getJobs(postData: nil, endPoint: .getJobs) { [weak self] (response: Result<JobResponse?, NetworkErrors>)in
                guard let self = self else {
@@ -30,7 +29,7 @@ class HomeViewModel:ObservableObject {
                case .failure(let error):
                    DispatchQueue.main.async {
                        self.alertValue.toggle()
-                       print("Failure because server not found", error)
+                       print("Failure", error)
                    }
                }
         }

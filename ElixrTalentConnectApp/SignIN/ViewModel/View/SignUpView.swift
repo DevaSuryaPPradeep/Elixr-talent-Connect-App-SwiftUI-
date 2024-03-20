@@ -43,6 +43,7 @@ struct SignUpView: View {
                     .navigationBarBackButtonHidden()
             }
         }
+        
     }
     /// Contains the logo.
     private var logo :some View {
@@ -72,11 +73,8 @@ struct SignUpView: View {
     }
     /// Contains the  list.
     private var listView :some View {
-        List {
-            RoundedRectangles(detailValue: $userName, viewmodel: .fullName)
-            RoundedRectangles(detailValue: $emailAddress, viewmodel: .emailAddress)
-            SecureFields(hidePassword: $hidePasswordBool, secureFieldDetails: $password, viewModel: .password)
-            SecureFields(hidePassword: $hideValue, secureFieldDetails: $confirmPassword, viewModel: .confirmPassword)
+        List(viewModelInstance.dataArray,id: \.self) {value in
+            signUpFields(spModel: value, textValue: setupSignup(for: value))
         }
     }
     /// Contains the sign up button.
@@ -115,9 +113,58 @@ struct SignUpView: View {
         }
         }
     }
+    
+    private func setupSignup (for variable :SignUpModel)->Binding<String> {
+        switch variable {
+        case .fullName: 
+            return $userName
+        case .emailAddress:
+            return $emailAddress
+        case .password:
+            return $password
+        case .confirmPassword:
+            return $confirmPassword
+        }
+    }
 }
 #Preview {
     SignUpView()
+}
+
+struct signUpFields :View {
+    let spModel :SignUpModel
+    @State var isHidden: Bool = false
+    @Binding var  textValue :String
+    var body: some View {
+        HStack{
+            IconImage(imageValue: spModel.iconImage)
+                .font(.title3)
+                .padding()
+            VStack(alignment: .leading, content: {
+                Text(spModel.title)
+                if spModel.isVisible {
+                    HStack{
+                        if isHidden {
+                            passwordField(passwordVariable: $textValue, placeHolder: spModel.placeHolder)
+                        }
+                        else{
+                            Textfields(bindingVariable: $textValue, placeholder: spModel.placeHolder)
+                        }
+                        Button {
+                            isHidden.toggle()
+                        }label: {
+                            Image(systemName: isHidden ? "eye" : "eye.slash")
+                                .foregroundStyle(Color.black)
+                        }
+                    }
+                }
+                else {
+                    Textfields(bindingVariable: $textValue, placeholder: spModel.placeHolder)
+                }
+                })
+            
+        }
+    }
 }
 
 

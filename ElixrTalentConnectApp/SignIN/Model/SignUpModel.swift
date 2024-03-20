@@ -67,7 +67,6 @@ extension SignUpModel {
             return true
         case .confirmPassword:
             return true
-
         }
     }
 }
