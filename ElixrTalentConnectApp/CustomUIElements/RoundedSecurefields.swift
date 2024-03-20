@@ -30,7 +30,7 @@ struct  SecureFields :View {
                             else {
                                 passwordField(passwordVariable: $secureFieldDetails, placeHolder: viewModel.placeHolder)
                                     .padding(.top,-5)
-
+                                
                             }
                             Button{
                                 hidePassword.toggle()
@@ -47,3 +47,49 @@ struct  SecureFields :View {
         }
     }
 }
+
+
+
+//struct signUpFields :View{
+//    let signUpModel :SignUpModel
+//    @Binding var textValue :String
+//    @State var isSeccureTextEntry :Bool = true
+//    var body: some View {
+//        NavigationStack {
+//            HStack{
+//                IconImage(imageValue: signUpModel.iconImage)
+//                VStack (alignment: .leading
+//                        , content: {
+//                    Text(signUpModel.title)
+//                    HStack {
+//                        if signUpModel.isVisible {
+//                            if isSeccureTextEntry {
+//                                passwordField(passwordVariable: $textValue, placeHolder: signUpModel.placeHolder)
+//                            }
+//                            else{
+//                                Textfields(bindingVariable: $textValue, placeholder: signUpModel.placeHolder)
+//                            }
+//                            Button{
+//                                isSeccureTextEntry.toggle()
+//                            }
+//                        label:{
+//                            isSeccureTextEntry ? IconImage(imageValue: "eye"):  IconImage(imageValue: "eye.slash")
+//                        }
+//                        }
+//                    }
+//                }
+//                )}
+//        }
+//    }
+//}
+//var title:String {
+//    switch self {
+//    case .emailAddress :
+//        return "EMAIL ADDRESS"
+//    case .fullName:
+//        return "FULL NAME"
+//    case .password:
+//        return "PASSWORD"
+//    case .confirmPassword:
+//        return "CONFIRM PASSWORD"
+//    }
