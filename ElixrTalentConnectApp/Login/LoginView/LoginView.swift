@@ -108,10 +108,10 @@ struct LoginView: View {
             if validationResult.isValid {
                 viewModelInstance.authenticateWithBiometrics {  (success, error) in
                     if success {
-                        print("Authentivation successful")
+                        print("Authentication successful")
                         isValid.toggle()
                     } else {
-                        print("Authentivation Failed")
+                        print("Authentication Failed")
                     }
                 }
             } else {
