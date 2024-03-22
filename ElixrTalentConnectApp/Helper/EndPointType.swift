@@ -25,7 +25,7 @@ case url = "http://localhost:9001/elixr"
 enum HTTPMethod: String {
     case GET, POST, DELETE
 }
-
+// 
 /// Endpoints
 enum EndPoints {
     case getJobList
