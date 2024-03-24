@@ -9,99 +9,120 @@ import SwiftUI
 
 /// View for homeView.
 struct HomeView: View {
-    
-    /// State properties & varible declarations.
+    /// Declarationof state property and State object instance.
     @StateObject var viewModelInstance =  HomeViewModel()
-    @State var textToSearch :String = ""
-    var filteredArray :[Jobs]  {
+    @State var textToSearch: String = ""
+    /// Array for the list.- swiftches between the original array and filetered array.
+    var filteredArray :[Jobs] {
         if textToSearch.isEmpty {
-            return  viewModelInstance.jobArray
-        }
-        else{
+            return viewModelInstance.jobArray
+        } else {
             return viewModelInstance.jobArray.filter { jobDetails in
-                textToSearch.split(separator: "").allSatisfy { variableData in
-                    jobDetails.title.lowercased().contains(variableData.lowercased())
+                textToSearch.split(separator: " ").allSatisfy { Substring in
+                    jobDetails.title.lowercased().contains(textToSearch.lowercased())
                 }
             }
         }
     }
+    
     var body: some View {
         NavigationStack {
-            List(filteredArray) {value in
-                VStack(alignment: .leading, content: {
-                    Spacer()
-                    HStack{
-                        Spacer()
-                        Text(value.title)
-                            .font(.system(size: 20))
-                            .bold()
-                            .padding(.leading,-20)
-                        Spacer()
-                        Button{
-                            
-                        }label: {
-                            Image(systemName: "heart")
-                                .foregroundStyle(Color.black)
-                        }
-                        Spacer()
-                        VStack(alignment: .trailing){
-                            Text("Appllication Deadline")
-                            if let deadLineData  = viewModelInstance.dateFormatter(dateString: value.deadlineDate){
-                                Text(deadLineData)
-                            }
-                        }
-                        .padding()
-                        .foregroundStyle(Color.gray)
-                        .background(Color("lightTheme"))
-                        .clipShape(RoundedRectangle(cornerRadius: 30.0), style: FillStyle())
-                        Spacer()
-                    }
-                    Spacer()
-                    Text(value.location)
-                        .padding(.leading,20)
-                    Text(value.description)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                    Spacer()
-                })
-                .padding()
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10.0, height: 25.0)))
-                .frame(width: 330, height: 300, alignment: .center)
-                .background {
-                    Color.cyan
-                }
+            List(filteredArray) { value in
+                JobRow(job: value)
             }
-            .searchable(text:$textToSearch,prompt: "Enter the job title here.")
-            . toolbar{
-                ToolbarItem(placement: .topBarLeading) {
+            .searchable(text: $textToSearch, prompt: "Enter the job title here.")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button{
-                        print("Added to favourite jobs")
+                        print("DashBoard is opened.")
                     }label: {
-                        Image(systemName: "list.bullet")
+                        Image(systemName: "list.dash")
                             .foregroundStyle(Color.black)
                             .bold()
                     }
                 }
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     LogoImage(logoName: "logo 1", width: 70, height: 70)
-                        .padding(.leading,-220)
+                        .padding(.trailing,143)
                 }
             }
         }
-        .onAppear{
+        .onAppear {
             viewModelInstance.fetchData()
         }
-        .alert(isPresented: $viewModelInstance.alertValue, content: {
-            Alert(title: Text("ALert"),message: Text("Sorry can't connect at the  moment.please try again."))
-        })
-    }
-    
-    func dateFormatterHelper(with dataItem:Jobs) -> String?{
-        guard let formattedDate = viewModelInstance.dateFormatter(dateString: dataItem.deadlineDate) else {
-            return nil
+        .alert(isPresented: $viewModelInstance.alertValue) {
+            Alert(title: Text("Alert"), message: Text("Sorry, can't connect at the moment. Please try again.")
+                .bold())
         }
-        return formattedDate
+    }
+}
+
+/// Each individual job Details Structure , this is being reused in the list.
+struct JobRow: View {
+    
+    /// Constants and State property decalarations.
+    let job: Jobs
+    @State  var isFavourite = false
+    @StateObject var vmInstance = HomeViewModel()
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            RoundedRectangle(cornerRadius: 10.0)
+                .stroke(style: StrokeStyle())
+                .frame(width: 310,height: 200)
+                .overlay {
+                    VStack(alignment: .center) {
+                        Spacer()
+                        HStack{
+                            Spacer()
+                            Text(job.title)
+                                .font(.callout)
+                                .bold()
+                                .foregroundStyle(isFavourite ? Color.white :Color.black)
+                                .padding(.leading,2)
+                            Spacer()
+                            Button {
+                                isFavourite.toggle()
+                            } label: {
+                                Image(systemName: isFavourite ? "heart.fill" : "heart")
+                                    .foregroundColor(isFavourite ? .red : .black)
+                            }
+                            Spacer()
+                            VStack{
+                                Text("Application Deadline")
+                                    .font(.system(size: 10.0))
+                                    .bold()
+                                    .padding(.leading,-8)
+                                if let formattedDate  = vmInstance.dateFormatter(dateString: job.deadlineDate)  {
+                                    Text(formattedDate)
+                                        .font(.system(size: 10.0))
+                                }
+                            }
+                            .padding(.all)
+                            .foregroundStyle(Color.gray)
+                            .background(Color("lightTheme"))
+                            .clipShape(RoundedRectangle(cornerRadius: 30.0))
+                            Spacer()
+                        }
+                        Spacer()
+                        Text(job.location)
+                            .padding(.leading,-120)
+                            .font(.system(size: 15.0))
+                            .bold()
+                            .foregroundStyle(isFavourite ? Color.white : Color.black)
+                        Spacer()
+                        Text(job.description)
+                            .foregroundStyle(isFavourite ? Color.white : Color.black)
+                            .font(.system(size: 15.0))
+                            .padding(.leading,10)
+                        Spacer()
+                    }
+                }
+                .background(isFavourite ? Color("elixrBlue") : Color("elixrlightGray"))
+        }
     }
 }
 #Preview {
     HomeView()
 }
+

@@ -73,7 +73,7 @@ class HomeViewModel:ObservableObject {
                 let day = dayFormatter.string(from: date)
                 ///For  month.
                 let monthFormatter = DateFormatter()
-                monthFormatter.dateFormat = "MM"
+                monthFormatter.dateFormat = "MMM"
                 let month =  monthFormatter.string(from: date)
                 ///for year
                 let yearFormatter = DateFormatter()
@@ -98,8 +98,7 @@ class HomeViewModel:ObservableObject {
             default:
                 return "nth"
             }
-            
         }
-        
+    
     
 }
