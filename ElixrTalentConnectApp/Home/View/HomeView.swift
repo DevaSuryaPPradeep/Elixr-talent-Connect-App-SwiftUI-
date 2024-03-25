@@ -12,6 +12,7 @@ struct HomeView: View {
     /// Declarationof state property and State object instance.
     @StateObject var viewModelInstance =  HomeViewModel()
     @State var textToSearch: String = ""
+    @State var selectedTab = 0
     /// Array for the list.- swiftches between the original array and filetered array.
     var filteredArray :[Jobs] {
         if textToSearch.isEmpty {
@@ -26,36 +27,39 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            List(filteredArray) { value in
-                JobRow(job: value)
-            }
-            .searchable(text: $textToSearch, prompt: "Enter the job title here.")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button{
-                        print("DashBoard is opened.")
-                    }label: {
-                        Image(systemName: "list.dash")
-                            .foregroundStyle(Color.black)
-                            .bold()
+            NavigationStack {
+                List(filteredArray) { value in
+                    JobRow(job: value)
+                }
+                .searchable(text: $textToSearch, prompt: "Enter the job title here.")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button{
+                            print("DashBoard is opened.")
+                        }label: {
+                            Image(systemName: "list.dash")
+                                .foregroundStyle(Color.black)
+                                .bold()
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        LogoImage(logoName: "logo 1", width: 70, height: 70)
+                            .padding(.trailing,143)
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    LogoImage(logoName: "logo 1", width: 70, height: 70)
-                        .padding(.trailing,143)
-                }
+                .navigationBarBackButtonHidden()
+              //  .navigationDestination(for: <#T##Hashable.Protocol#>, destination: <#T##(Hashable) -> View#>)
+            .onAppear {
+                viewModelInstance.fetchData()
             }
-            .navigationBarBackButtonHidden()
+            .alert(isPresented: $viewModelInstance.alertValue) {
+                Alert(title: Text("Alert"), message: Text("Sorry, can't connect at the moment. Please try again.")
+                    .bold())
+            }
         }
-        .onAppear {
-            viewModelInstance.fetchData()
-        }
-        .alert(isPresented: $viewModelInstance.alertValue) {
-            Alert(title: Text("Alert"), message: Text("Sorry, can't connect at the moment. Please try again.")
-                .bold())
-        }
+        
     }
+        
 }
 
 /// Each individual job Details Structure , this is being reused in the list.
@@ -65,16 +69,9 @@ struct JobRow: View {
     let job: Jobs
     @State  var isFavourite = false
     @StateObject var vmInstance = HomeViewModel()
-    @State var displayViewColor: Color?
-    @State var jobDetailsColor: Color?
-    @State var jobHeadingColor: Color?
-    @State var jobLocationColor: Color?
-    @State var favoriteButtonImage: Image?
+    
     
     var body: some View {
-        //        guard let uniqueJobId = vmInstance.idInstance else {
-        //                 return
-        //             }
         VStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 10.0)
                 .stroke(style: StrokeStyle())
@@ -87,11 +84,10 @@ struct JobRow: View {
                             Text(job.title)
                                 .font(.callout)
                                 .bold()
-                                .foregroundStyle(jobHeadingColor ?? Color.elixrBlue)
+                                .foregroundStyle(Color.elixrBlue)
                                 .padding(.leading,2)
                             Spacer()
                             Button {
-                                 print("jobid-->\(job.id)")
                                 vmInstance.isFavouriteButtonTapped(jobID: job.id)
                                 vmInstance.fetchData()
                             } label: {
@@ -125,17 +121,16 @@ struct JobRow: View {
                             .padding(.leading,-120)
                             .font(.system(size: 15.0))
                             .bold()
-                            .foregroundStyle(jobLocationColor ?? Color.gray)
+                            .foregroundStyle(Color.gray)
                         Spacer()
                         Text(job.description)
-                            .foregroundStyle(jobDetailsColor ?? Color.elixrBlue)
+                            .foregroundStyle(Color.elixrBlue)
                             .font(.system(size: 15.0))
                             .padding(.leading,10)
                         Spacer()
                     }
                 }
-                .background(displayViewColor ?? Color.elixrlightGray)
-            
+                .background(Color.elixrlightGray)
         }
     }
 }

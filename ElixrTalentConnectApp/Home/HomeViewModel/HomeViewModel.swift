@@ -16,8 +16,7 @@ class HomeViewModel:ObservableObject {
     @Published var alertValue :Bool = false
     @Published var jobArray :[Jobs] = []
     let modelInstance = JobResponse(jobs: [Jobs]())
-    
-    
+
     /// Function to perform API  fetch from the API.
     func fetchData() {
         APIManager.shared.APIcall(endPoint: .getJobList){ [weak self] (response: Result<JobResponse?, NetworkErrors>)in
