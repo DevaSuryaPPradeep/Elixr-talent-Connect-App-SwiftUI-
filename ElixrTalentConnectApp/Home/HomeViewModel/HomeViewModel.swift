@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
-//@MainActor
+
 /// Viewmodel for the home View.
 class HomeViewModel:ObservableObject {
     
-    /// Published properties
+    /// Published properties & constants declarations.
     @Published var alertValue :Bool = false
     @Published var jobArray :[Jobs] = []
+    let modelInstance = JobResponse(jobs: [Jobs]())
+    
     
     /// Function to perform API  fetch from the API.
     func fetchData() {
@@ -55,6 +58,9 @@ class HomeViewModel:ObservableObject {
         }
     }
     
+    ///dateFormatter- Takes am input from the home view and passed on to the next function  format helper .
+    /// - Parameter dateString: is of type string that is passed from the  api
+    /// - Returns: This returns a formatted value of the date value string into specific format as per the requirement.
     func dateFormatter(dateString:String?) ->String? {
         guard let dateString = dateString, let formatedString = formatHelper(dateStringValue: dateString) else{
             return nil
@@ -62,6 +68,9 @@ class HomeViewModel:ObservableObject {
         return formatedString
     }
     
+    /// formatHelper - this is a function used to format the date string received from t
+    /// - Parameter dateStringValue: <#dateStringValue description#>
+    /// - Returns: <#description#>
     func formatHelper(dateStringValue: String?)->String?{
         if let dateStringValue = dateStringValue{
             let dFInstance = DateFormatter()
@@ -84,21 +93,41 @@ class HomeViewModel:ObservableObject {
         }
         return dateStringValue
     }
-        ///date from the API - 2024-01-10
-        /// expected output 2nd feb 2024, 1st feb 2024
-        func SuffixAppender(DayInstance:String)->String{
-            let dayString = Int(DayInstance) ?? 0
-            switch dayString {
-            case 1,21,31 :
-                return "st"
-            case 2,22 :
-                return "nd"
-            case 3,23:
-                return "rd"
-            default:
-                return "nth"
-            }
+    
+    /// Date from the API - 2024-01-10
+    ///  Expected output 2nd feb 2024, 1st feb 2024
+    
+    /// - Parameter DayInstance: Is of type is String that represents the day integer in a date.
+    /// - Returns: Which returns a  specifed suffix for the particular day in a date,
+    func SuffixAppender(DayInstance:String)->String{
+        let dayString = Int(DayInstance) ?? 0
+        switch dayString {
+        case 1,21,31 :
+            return "st"
+        case 2,22 :
+            return "nd"
+        case 3,23:
+            return "rd"
+        default:
+            return "nth"
         }
+    }
     
+    /// isFavouriteButtonTapped -Creates a userdefault carrier to contain selected jobs.
+    /// - Parameter jobID: Is of type String which represents the unique job ID passed from the home view.
+    func isFavouriteButtonTapped(jobID:String?){
+        if let uniqueJobId = jobID {
+            let isFavourite = UserDefaults.standard.bool(forKey: uniqueJobId)
+            UserDefaults.standard.set(!isFavourite, forKey: uniqueJobId)
+        }
+    }
     
+    /// UpdateUI- updates the UI onclicking
+    /// - Parameters:
+    ///   - job: is of type job , is used to acess all the values in the API
+    ///   - favouriteButtonImage: This will set the button image based on the value of the userdefaults.
+    func updateUI(for job: Jobs, favouriteButtonImage: inout Image?) {
+        let isFavourite = UserDefaults.standard.bool(forKey: job.id)
+        favouriteButtonImage = isFavourite ? Image("heartButton") : Image("heart")
+    }
 }

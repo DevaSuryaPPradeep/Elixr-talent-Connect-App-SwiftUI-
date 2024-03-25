@@ -46,6 +46,7 @@ struct HomeView: View {
                         .padding(.trailing,143)
                 }
             }
+            .navigationBarBackButtonHidden()
         }
         .onAppear {
             viewModelInstance.fetchData()
@@ -64,8 +65,16 @@ struct JobRow: View {
     let job: Jobs
     @State  var isFavourite = false
     @StateObject var vmInstance = HomeViewModel()
+    @State var displayViewColor: Color?
+    @State var jobDetailsColor: Color?
+    @State var jobHeadingColor: Color?
+    @State var jobLocationColor: Color?
+    @State var favoriteButtonImage: Image?
     
     var body: some View {
+        //        guard let uniqueJobId = vmInstance.idInstance else {
+        //                 return
+        //             }
         VStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 10.0)
                 .stroke(style: StrokeStyle())
@@ -78,15 +87,22 @@ struct JobRow: View {
                             Text(job.title)
                                 .font(.callout)
                                 .bold()
-                                .foregroundStyle(isFavourite ? Color.white :Color.black)
+                                .foregroundStyle(jobHeadingColor ?? Color.elixrBlue)
                                 .padding(.leading,2)
                             Spacer()
                             Button {
-                                isFavourite.toggle()
+                                 print("jobid-->\(job.id)")
+                                vmInstance.isFavouriteButtonTapped(jobID: job.id)
+                                vmInstance.fetchData()
                             } label: {
-                                Image(systemName: isFavourite ? "heart.fill" : "heart")
-                                    .foregroundColor(isFavourite ? .red : .black)
-                            }
+                                if UserDefaults.standard.bool(forKey: job.id){
+                                    Image("heartButton")
+                                }
+                                else
+                                {
+                                    Image("heart")
+                                }}
+                            .buttonStyle(.plain)
                             Spacer()
                             VStack{
                                 Text("Application Deadline")
@@ -109,16 +125,17 @@ struct JobRow: View {
                             .padding(.leading,-120)
                             .font(.system(size: 15.0))
                             .bold()
-                            .foregroundStyle(isFavourite ? Color.white : Color.black)
+                            .foregroundStyle(jobLocationColor ?? Color.gray)
                         Spacer()
                         Text(job.description)
-                            .foregroundStyle(isFavourite ? Color.white : Color.black)
+                            .foregroundStyle(jobDetailsColor ?? Color.elixrBlue)
                             .font(.system(size: 15.0))
                             .padding(.leading,10)
                         Spacer()
                     }
                 }
-                .background(isFavourite ? Color("elixrBlue") : Color("elixrlightGray"))
+                .background(displayViewColor ?? Color.elixrlightGray)
+            
         }
     }
 }
