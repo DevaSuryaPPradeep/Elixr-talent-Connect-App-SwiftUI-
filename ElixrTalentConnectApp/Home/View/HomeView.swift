@@ -13,6 +13,7 @@ struct HomeView: View {
     @StateObject var viewModelInstance =  HomeViewModel()
     @State var textToSearch: String = ""
     @State var selectedTab = 0
+    @State var isvalid = false
     /// Array for the list.- swiftches between the original array and filetered array.
     var filteredArray :[Jobs] {
         if textToSearch.isEmpty {
@@ -25,30 +26,35 @@ struct HomeView: View {
             }
         }
     }
-    
     var body: some View {
-            NavigationStack {
-                List(filteredArray) { value in
+        NavigationStack {
+            List(filteredArray) { value in
+                NavigationLink(value: value) {
                     JobRow(job: value)
                 }
-                .searchable(text: $textToSearch, prompt: "Enter the job title here.")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button{
-                            print("DashBoard is opened.")
-                        }label: {
-                            Image(systemName: "list.dash")
-                                .foregroundStyle(Color.black)
-                                .bold()
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        LogoImage(logoName: "logo 1", width: 70, height: 70)
-                            .padding(.trailing,143)
+            }
+            .searchable(text: $textToSearch, prompt: "Enter the job title here.")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button{
+                        print("DashBoard is opened.")
+                    }label: {
+                        Image(systemName: "list.dash")
+                            .foregroundStyle(Color.black)
+                            .bold()
                     }
                 }
-                .navigationBarBackButtonHidden()
-              //  .navigationDestination(for: <#T##Hashable.Protocol#>, destination: <#T##(Hashable) -> View#>)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    LogoImage(logoName: "logo 1", width: 70, height: 70)
+                        .padding(.trailing,143)
+                }
+            }
+            .navigationBarBackButtonHidden()
+            
+            .navigationDestination(for: Jobs.self, destination: { value in
+                jobDetailsCombine(jobInstance: value)
+            })
+            
             .onAppear {
                 viewModelInstance.fetchData()
             }
@@ -57,9 +63,7 @@ struct HomeView: View {
                     .bold())
             }
         }
-        
     }
-        
 }
 
 /// Each individual job Details Structure , this is being reused in the list.
@@ -69,8 +73,6 @@ struct JobRow: View {
     let job: Jobs
     @State  var isFavourite = false
     @StateObject var vmInstance = HomeViewModel()
-    
-    
     var body: some View {
         VStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 10.0)

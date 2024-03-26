@@ -12,7 +12,7 @@ struct JobResponse :Codable {
     let jobs : [Jobs]
 }
 
-struct Jobs :Codable,Identifiable {
+struct Jobs :Codable,Identifiable,Hashable {
     let id :String
     var title :String
     let department :String

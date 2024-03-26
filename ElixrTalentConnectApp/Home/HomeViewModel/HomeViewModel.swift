@@ -120,13 +120,4 @@ class HomeViewModel:ObservableObject {
             UserDefaults.standard.set(!isFavourite, forKey: uniqueJobId)
         }
     }
-    
-    /// UpdateUI- updates the UI onclicking
-    /// - Parameters:
-    ///   - job: is of type job , is used to acess all the values in the API
-    ///   - favouriteButtonImage: This will set the button image based on the value of the userdefaults.
-    func updateUI(for job: Jobs, favouriteButtonImage: inout Image?) {
-        let isFavourite = UserDefaults.standard.bool(forKey: job.id)
-        favouriteButtonImage = isFavourite ? Image("heartButton") : Image("heart")
-    }
 }
