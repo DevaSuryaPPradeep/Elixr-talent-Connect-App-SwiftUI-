@@ -43,7 +43,6 @@ struct jobDetailsHeaderview: View {
                         Spacer()
                     }
                     .padding(.horizontal,-160)
-                    
                 }
             }
         }

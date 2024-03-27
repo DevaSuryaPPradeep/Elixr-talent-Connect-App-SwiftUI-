@@ -32,7 +32,7 @@ struct SignUpView: View {
                 listView
                 signUPButton
                     .navigationDestination(isPresented: $isPresented, destination: {
-                        HomeView()
+                        MainTabbarView()
                     })
                     .alert(isPresented: $alertVaraible, content: {
                         Alert(title: Text("Alert"),message: Text (alertMessage),dismissButton: .default(Text("Fix It.")))

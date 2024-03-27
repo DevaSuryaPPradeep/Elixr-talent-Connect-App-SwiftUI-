@@ -19,10 +19,11 @@ struct LoginView: View {
     @State var alertVariable: Bool = false
     @State var message :String = ""
     @State var signUpBool :Bool = false
-    
+    @State var isPresented :Bool = false
+    @Binding var isLogedIn: Bool
     var body: some View {
-        NavigationStack{
-            VStack{
+        NavigationStack {
+            VStack {
                 headerView
                 ZStack {
                     RoundedRectangleView
@@ -69,7 +70,7 @@ struct LoginView: View {
                 .padding(.leading,-88)
             Label(textCaptions: "Please sign-in to login.")
                 .font(.headline)
-                   })
+        })
         .padding(.init(top: 10.0, leading: -80, bottom: 1, trailing: 20))
     }
     
@@ -81,9 +82,8 @@ struct LoginView: View {
             Textfields(bindingVariable: $userIDValue,placeholder: "Email")
         }
         .frame(width: 300,height: 40)
-        .background(Color.white)
+        .background(Color.gray.opacity(0.3))
         .clipShape(RoundedRectangle(cornerRadius: 5))
-        .border(Color.gray,width: 1)
         .cornerRadius(10.0)
         .padding()
     }
@@ -94,9 +94,9 @@ struct LoginView: View {
                 .padding(3)
             passwordField(passwordVariable: $passwordKey, placeHolder: "Enter the password here.")
         }  .frame(width: 300,height: 40)
-            .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 5))
-            .border(Color.gray,width: 1)
+            .background(Color.gray.opacity(0.3))
+            .foregroundStyle(Color.elixrlightGray)
             .cornerRadius(10.0)
             .padding()
     }
@@ -104,12 +104,13 @@ struct LoginView: View {
     private var signInButton :some View {
         Button {
             let validationResult = viewModelInstance.validateUserCredentials(model: LoginModel(userID: userIDValue, passwordID: passwordKey))
-           
+            
             if validationResult.isValid {
                 viewModelInstance.authenticateWithBiometrics {  (success, error) in
                     if success {
                         print("Authentication successful")
                         isValid.toggle()
+                        isLogedIn.toggle()
                     } else {
                         print("Authentication Failed")
                     }
@@ -128,9 +129,9 @@ struct LoginView: View {
             .alert(isPresented: $alertVariable, content: {
                 Alert(title: Text("Alert"),message: Text(message),dismissButton: .cancel())
             })
-            .navigationDestination(isPresented: $isValid, destination: {
-                HomeView()
-            })
+//            .navigationDestination(isPresented: $isValid, destination: {
+//                MainTabbarView()
+//            })
             .padding()
     }
     
@@ -166,6 +167,6 @@ struct LoginView: View {
     
 }
 #Preview {
-    LoginView()
+    LoginView( isLogedIn: .constant(false))
 }
 

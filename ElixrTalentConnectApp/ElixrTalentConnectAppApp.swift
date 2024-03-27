@@ -11,7 +11,7 @@ import SwiftUI
 struct ElixrTalentConnectAppApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            SplashScreen()
         }
     }
 }

@@ -12,9 +12,15 @@ struct SplashScreen: View {
     /// Variable Decarations.
     @State private var isActive: Bool = false
     
+    @State private var isLoggedIn: Bool = false
+    
     var body: some View {
         if isActive {
-            LoginView()
+            if isLoggedIn {
+                 MainTabbarView()
+            } else {
+                LoginView(isLogedIn: $isLoggedIn)
+            }
         }
         else  {
             VStack{

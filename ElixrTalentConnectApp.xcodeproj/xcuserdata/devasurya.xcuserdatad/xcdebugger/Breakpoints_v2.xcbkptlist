@@ -20,47 +20,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1AA56A98-32B8-4DEC-A32A-045E825EC6D6"
-            shouldBeEnabled = "Yes"
+            uuid = "E256DAD2-8E77-4A82-A314-F7E865D335CE"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "isFavouriteButtonTapped(jobID:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1AA56A98-32B8-4DEC-A32A-045E825EC6D6 - 222993214e414be7"
+                  uuid = "E256DAD2-8E77-4A82-A314-F7E865D335CE - 367c2f724ac06d12"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.String) -&gt; ()"
                   moduleName = "ElixrTalentConnectApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "188">
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "876">
                </Location>
                <Location
-                  uuid = "1AA56A98-32B8-4DEC-A32A-045E825EC6D6 - 222993214e414be7"
+                  uuid = "E256DAD2-8E77-4A82-A314-F7E865D335CE - 367c2f724ac06d12"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.String) -&gt; ()"
                   moduleName = "ElixrTalentConnectApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "220">
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "1064">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -68,8 +68,151 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E256DAD2-8E77-4A82-A314-F7E865D335CE"
-            shouldBeEnabled = "Yes"
+            uuid = "5235D909-98A6-4F73-A093-D4FCCF0E4F81"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/MyJobs/ViewModel/MyjobsVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getDataFromSafe()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0AAE5DC-9A93-4C76-871E-0729AD6F0DDA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/MyJobs/ViewModel/MyjobsVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getDataFromSafe()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12477CB9-227E-4F3C-AEE2-4BC0AF1FD829"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/MyJobs/ViewModel/MyjobsVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getDataFromSafe()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D96CB6B6-1034-4500-A293-24486BA4E93F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/MyJobs/ViewModel/MyjobsVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getDataFromSafe()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE68F69E-C4D5-4EDA-96C2-10F92EA0D0DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/MyJobs/ViewModel/MyjobsVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getDataFromSafe()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E6BBA8C-B3F7-4789-8A00-D5BCDEAEA546"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Swift projects/Elixr4thPOC/Elixr-talent-Connect-App-SwiftUI-/ElixrTalentConnectApp/Job details/View/UserInteractiveView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "7E6BBA8C-B3F7-4789-8A00-D5BCDEAEA546 - b5d72bee206b9be0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.overlay&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(alignment: SwiftUI.Alignment, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Image&gt;)&gt;&gt;)&gt; in ElixrTalentConnectApp.UserInteractiveArea.body.getter : some"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/Swift%20projects/Elixr4thPOC/Elixr-talent-Connect-App-SwiftUI-/ElixrTalentConnectApp/Job%20details/View/UserInteractiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "7E6BBA8C-B3F7-4789-8A00-D5BCDEAEA546 - b5d72bee206b9be0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.overlay&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(alignment: SwiftUI.Alignment, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Image&gt;)&gt;&gt;)&gt; in ElixrTalentConnectApp.UserInteractiveArea.body.getter : some"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/Swift%20projects/Elixr4thPOC/Elixr-talent-Connect-App-SwiftUI-/ElixrTalentConnectApp/Job%20details/View/UserInteractiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "7E6BBA8C-B3F7-4789-8A00-D5BCDEAEA546 - b1ceb21b7281aa5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.overlay&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(alignment: SwiftUI.Alignment, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.overlay&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(alignment: SwiftUI.Alignment, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Image&gt;)&gt;&gt;)&gt; in ElixrTalentConnectApp.UserInteractiveArea.body.getter : some"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/Swift%20projects/Elixr4thPOC/Elixr-talent-Connect-App-SwiftUI-/ElixrTalentConnectApp/Job%20details/View/UserInteractiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "320">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87AFAE37-4A46-425E-9316-0024BB5FDA3C"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
@@ -81,34 +224,161 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E256DAD2-8E77-4A82-A314-F7E865D335CE - 222993214e414b88"
+                  uuid = "87AFAE37-4A46-425E-9316-0024BB5FDA3C - 367c2f724ac06d75"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.String) -&gt; ()"
                   moduleName = "ElixrTalentConnectApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "924">
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "712">
                </Location>
                <Location
-                  uuid = "E256DAD2-8E77-4A82-A314-F7E865D335CE - 222993214e414b88"
+                  uuid = "87AFAE37-4A46-425E-9316-0024BB5FDA3C - 367c2f724ac06d75"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.String) -&gt; ()"
                   moduleName = "ElixrTalentConnectApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "908">
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "592">
+               </Location>
+               <Location
+                  uuid = "87AFAE37-4A46-425E-9316-0024BB5FDA3C - 367c2f724ac06d75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElixrTalentConnectApp.HomeViewModel.isFavouriteButtonTapped(jobID: Swift.String) -&gt; ()"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "792">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93CEF877-CDD1-47B6-9E6E-C4A1EBC285FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/Home/HomeViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "isFavouriteButtonTapped(jobID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "215F1162-B509-4F58-9F59-3AF957BDBC8E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/Home/HomeModel/HomeModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "Jobs"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "215F1162-B509-4F58-9F59-3AF957BDBC8E - 2794f4c3e3e79da3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElixrTalentConnectApp.Jobs.isFavouriteBool.getter : Swift.Bool"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeModel/HomeModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "215F1162-B509-4F58-9F59-3AF957BDBC8E - 3837267b775d8025"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElixrTalentConnectApp.Jobs.isFavouriteBool.willset : Swift.Bool"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeModel/HomeModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "555935B2-0F46-4275-BD47-D15F8F5B1E77"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElixrTalentConnectApp/Home/HomeModel/HomeModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "Jobs"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "555935B2-0F46-4275-BD47-D15F8F5B1E77 - 9f1faa6aa8b8f513"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElixrTalentConnectApp.Jobs.isFavouriteBool.setter : Swift.Bool"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeModel/HomeModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "555935B2-0F46-4275-BD47-D15F8F5B1E77 - f3293ea0e19eb439"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ElixrTalentConnectApp.Jobs.isFavouriteBool.didset : Swift.Bool"
+                  moduleName = "ElixrTalentConnectApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devasurya/Desktop/FInal%20project/ElixrTalentConnectApp/Home/HomeModel/HomeModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "208">
                </Location>
             </Locations>
          </BreakpointContent>

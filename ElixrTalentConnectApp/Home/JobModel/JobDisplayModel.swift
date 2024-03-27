@@ -24,4 +24,15 @@ struct Jobs :Codable,Identifiable,Hashable {
     let location : String
     let salary : String
     let status : String
+    var isFavouriteBool :Bool
+    {
+        get {
+            UserDefaults.standard.bool(forKey: id)
+        }
+        set {
+            let container = UserDefaults.standard.bool(forKey: id)
+            UserDefaults.standard.setValue(!container, forKey: id)
+        }
+    }
 }
+

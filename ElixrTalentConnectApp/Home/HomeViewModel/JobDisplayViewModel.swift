@@ -10,13 +10,14 @@ import SwiftUI
 
 
 /// Viewmodel for the home View.
-class HomeViewModel:ObservableObject {
+class JobDisplayViewModel:ObservableObject {
     
     /// Published properties & constants declarations.
     @Published var alertValue :Bool = false
     @Published var jobArray :[Jobs] = []
     let modelInstance = JobResponse(jobs: [Jobs]())
-
+    
+    
     /// Function to perform API  fetch from the API.
     func fetchData() {
         APIManager.shared.APIcall(endPoint: .getJobList){ [weak self] (response: Result<JobResponse?, NetworkErrors>)in
@@ -114,10 +115,20 @@ class HomeViewModel:ObservableObject {
     
     /// isFavouriteButtonTapped -Creates a userdefault carrier to contain selected jobs.
     /// - Parameter jobID: Is of type String which represents the unique job ID passed from the home view.
-    func isFavouriteButtonTapped(jobID:String?){
-        if let uniqueJobId = jobID {
-            let isFavourite = UserDefaults.standard.bool(forKey: uniqueJobId)
-            UserDefaults.standard.set(!isFavourite, forKey: uniqueJobId)
+    func isFavouriteButtonTapped(jobID:String){
+        let isFavourite = UserDefaults.standard.bool(forKey: jobID)
+        UserDefaults.standard.set(!isFavourite, forKey: jobID)
+    }
+    
+    
+    func fetchData(_ searchTerm :String ) -> [Jobs] {
+        guard  searchTerm.isEmpty else {
+            return jobArray.filter({ jobDetails in
+                searchTerm.split(separator: "").allSatisfy { Substring in
+                    jobDetails.title.lowercased().contains(searchTerm.lowercased())
+                }
+            })
         }
+        return jobArray
     }
 }

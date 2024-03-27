@@ -8,57 +8,82 @@
 import SwiftUI
 
 struct jobDetailsCombine: View {
-    let jobInstance:Jobs
+    
+    /// StateObject  &  constant decalrations.
+    @Binding var jobInstance :Jobs
+    @StateObject var jobDisplayViewModel :JobDisplayViewModel = JobDisplayViewModel()
+  //  @StateObject var jbDetailsVm :jobDetailsVm = jobDetailsVm()
+    
     var body: some View {
         ScrollView{
             VStack{
                 Spacer()
                 jobDetailsHeaderview(jobDetails: jobInstance)
+                    .padding()
                 Spacer()
-                Section(header: Text("Description")
-                    .foregroundStyle(Color.elixrBlue)
-                    .bold()
-                    .padding(.trailing,240)) {
+                VStack(alignment: .leading, content: {
+                    Section(header: Text("Description")
+                        .foregroundStyle(Color.elixrBlue)
+                        .bold()
+                    )
+                    {
                         Text(jobInstance.description)
-                            .frame(height: 100)
-
+                            .frame(width: 350)
                     }
-                Spacer()
-                Section(header: Text("Key Responsibilities")
-                    .foregroundStyle(Color.elixrBlue)
-                    .bold()
-                    .padding(.trailing,180)) {
+                    Spacer()
+                    Section(header: Text("Key Responsibilities")
+                        .foregroundStyle(Color.elixrBlue)
+                        .bold()
+                    ) {
                         Text(jobInstance.responsibilities)
-                            .padding(.trailing,165)
-                            .frame(height: 100)
                     }
-                Spacer()
-                Section(header: Text("Qualifications")
-                    .foregroundStyle(Color.elixrBlue)
-                    .bold()
-                    .padding(.trailing,230))
-                {
-                    Text(jobInstance.requirements)
-                        .padding(.leading,20)
-                        .frame(height: 100)
-
+                    Spacer()
+                    Section(header: Text("Qualifications")
+                        .foregroundStyle(Color.elixrBlue)
+                        .bold()
+                    )
+                    {
+                        Text(jobInstance.requirements)
+                    }
+                    Spacer()
                     
-                }
-                Spacer()
-                UserInteractiveArea(jobIDInfo: jobInstance)
+                })
+                
+                VStack(alignment: .center, content: {
+                    Button{
+                      //  jbDetailsVm.applyButtonPressed(jobInstance)
+                        print("jobApplied")
+                    } label: {
+                        RoundedRectangle(cornerRadius: 10.0)
+                            .fill(Color.elixrOrange)
+                            .frame(width: 120,height: 30)
+                            .overlay {
+                                Text("Apply for Job")
+                                    .foregroundStyle(Color.white)
+                                    .bold()
+                                    .font(.system(size: 15.0))
+                            }
+                    }
+                    HStack{
+                        Text("Save for later")
+                            .font(.system(size: 13.0))
+                        Button {
+                            jobInstance.isFavouriteBool = true
+                            print("jobinstance --> \(jobInstance.isFavouriteBool)")
+                            jobDisplayViewModel.fetchData()
+                        } label: {
+                            jobInstance.isFavouriteBool ? 
+                            Image( "heartButton") : Image(systemName: "heart")
+                        }
+                    }
+                })
             }
         }
     }
 }
 
-#Preview {
-    jobDetailsCombine(jobInstance :Jobs(id: "1", title: "VFX Editor", department: "Video Editinbbjkbkjbkjbkkbkjbkjbkjbkjg", postedDate: "22-3-23", deadlineDate: "29-3-23", description: "Video and content crj j j kjhvhvljhvhjvjhvjhvjvhjhvjhvjvjhvvjhvjhveations", responsibilities: "contenmf dam lk fal;k", requirements: "Pdmlkmsflkmdaklmslkmflkdmslfkmdkmflsakmmafldskmdslaorfolio", location: "London", salary: "30000", status: "Limited opportunities.") )
-}
-
-
-
-
 struct DetailsRow: View {
+    
     let jobInfo :String
     let textValue :String
     var body: some View {
