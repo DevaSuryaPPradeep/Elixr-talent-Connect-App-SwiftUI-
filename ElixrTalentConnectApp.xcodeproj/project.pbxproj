@@ -34,6 +34,7 @@
 		5A4E95712BB178D300B62823 /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95702BB178D300B62823 /* MainTabbarView.swift */; };
 		5A4E95732BB17B4200B62823 /* MyJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95722BB17B4200B62823 /* MyJobs.swift */; };
 		5A4E95782BB1805B00B62823 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95772BB1805B00B62823 /* MyProfile.swift */; };
+		5A5F236D2BB58F2D00BCABDE /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5F236C2BB58F2D00BCABDE /* SideMenu */; };
 		5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD18C852B9895C2006481ED /* SplashScreen.swift */; };
 		5AD2860F2BAB5DCC005ECAE6 /* networkMangaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2860E2BAB5DCC005ECAE6 /* networkMangaer.swift */; };
 		5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */; };
@@ -105,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5F236D2BB58F2D00BCABDE /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +427,9 @@
 			dependencies = (
 			);
 			name = ElixrTalentConnectApp;
+			packageProductDependencies = (
+				5A5F236C2BB58F2D00BCABDE /* SideMenu */,
+			);
 			productName = ElixrTalentConnectApp;
 			productReference = 5A3EFD8A2B97999A0064BEBE /* ElixrTalentConnectApp.app */;
 			productType = "com.apple.product-type.application";
@@ -497,6 +502,9 @@
 				Base,
 			);
 			mainGroup = 5A3EFD812B97999A0064BEBE;
+			packageReferences = (
+				5A5F236B2BB58F2D00BCABDE /* XCRemoteSwiftPackageReference "SideMenu" */,
+			);
 			productRefGroup = 5A3EFD8B2B97999A0064BEBE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -893,6 +901,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A5F236B2BB58F2D00BCABDE /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kukushi/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A5F236C2BB58F2D00BCABDE /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A5F236B2BB58F2D00BCABDE /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A3EFD822B97999A0064BEBE /* Project object */;
 }

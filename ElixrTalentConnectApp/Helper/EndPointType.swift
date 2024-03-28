@@ -16,7 +16,7 @@ enum NetworkErrors :Error {
     case invalidError
     case custom(String)
 }
-
+//http://localhost:9001/elixr/jobs
 /// baseURL
 enum baseURl :String {
 case url = "http://localhost:9001/elixr"

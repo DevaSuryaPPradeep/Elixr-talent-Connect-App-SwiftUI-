@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Header view extracted for the jobdetailsCombineView,
 struct jobDetailsHeaderview: View {
     let  jobDetails:Jobs
     var body: some View {

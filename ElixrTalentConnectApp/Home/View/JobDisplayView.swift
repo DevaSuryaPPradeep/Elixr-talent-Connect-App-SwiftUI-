@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SideMenu
+
 
 /// View for homeView.
 struct JobDisplayView: View {
@@ -14,6 +16,7 @@ struct JobDisplayView: View {
     @StateObject var viewModelInstance =  JobDisplayViewModel()
     @State var textToSearch: String = ""
     @State var isPresented :Bool = false
+    @State private var isMenuOpen = false
     @State  private var selectedJob :Jobs = Jobs(id: "", title: "", department: "", postedDate: "", deadlineDate: "", description: "", responsibilities: "", requirements: "", location: "", salary: "", status: "" )
     
     var body: some View {
