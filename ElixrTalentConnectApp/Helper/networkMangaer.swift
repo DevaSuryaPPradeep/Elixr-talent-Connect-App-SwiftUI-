@@ -14,7 +14,7 @@
 //final class networkManager {
 //    static let shared = networkManager()
 //    private init () {}
-//    
+//
 //    func APIcaller <H:Codable > (bodyPart :Data? = nil, endPointName:endPointType,completion:@escaping(Result<H,DataError>)->Void ) {
 //        guard let url = URL(string:baseURl1.url.rawValue + endPointName.URlString) else{
 //            completion(.failure(.invalidURL))
@@ -24,7 +24,7 @@
 //        URLValue.httpMethod = endPointName.methodType.rawValue
 //        URLValue.setValue("application/json", forHTTPHeaderField: "Accept")
 //        URLValue.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//        
+//
 //        switch endPointName.methodType {
 //        case .GET:
 //            break
@@ -61,15 +61,15 @@
 //    enum baseURl1 :String{
 //        case  url =  "http://localhost:9001/elixr"
 //    }
-//    
+//
 //    enum httpmethods :String {
 //        case GET,POST,DELETE
 //    }
-//    
+//
 //    enum endPointType {
 //        case getJobs
 //        case postJobs
-//        
+//
 //        var URlString:String {
 //            switch self {
 //            case .getJobs:
@@ -78,7 +78,7 @@
 //                return "/postjobs"
 //            }
 //        }
-//        
+//
 //        var methodType:httpmethods {
 //            switch self {
 //            case .getJobs:
@@ -133,7 +133,7 @@
 ////enum EndPoints {
 ////    case getJobList
 ////    case postJob
-////    
+////
 ////    var urlString: String {
 ////        switch self {
 ////        case .getJobList:
@@ -141,8 +141,8 @@
 ////        case .postJob:
 ////            return "/postjob"
 ////        }
-////    }
-////    
+///    }
+////
 ////    /// Endpoints wit HTTP METHODS.
 ////    var method: HTTPMethod {
 ////        switch self {

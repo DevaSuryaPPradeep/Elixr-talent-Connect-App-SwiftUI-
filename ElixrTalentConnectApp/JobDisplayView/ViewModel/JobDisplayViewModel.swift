@@ -20,40 +20,37 @@ class JobDisplayViewModel:ObservableObject {
     
     /// Function to perform API  fetch from the API.
     func fetchData() {
-        APIManager.shared.APIcall(endPoint: .getJobList){ [weak self] (response: Result<JobResponse?, NetworkErrors>)in
-            guard let self = self else {
+        NetworkManger.shared.APICaller(from: .getJobs) { [weak self] (response : Result<JobResponse?, networkErrors>)  in
+            guard let self = self  else {
                 return
             }
             switch response {
-            case .success(let result):
+            case .success(let result) :
                 DispatchQueue.main.async {
-                    if let jobs = result?.jobs {
-                        self.jobArray = jobs
+                    if let mydata = result?.jobs{
+                        self.jobArray =  mydata
                     }
-                    print("Success")
                 }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.alertValue.toggle()
-                    print("Failure", error)
-                }
+            case .failure(_):
+                print("error--->\(networkErrors.failedtoDecodeResponse)")
             }
         }
     }
     
-    /// Function to perform post Method.
-    func postJobs() {
+    
+    
+    func postJobs(){
         let encodedData = try? JSONEncoder().encode(postDataInstance)
-        APIManager.shared.APIcall(body: encodedData, endPoint: .postJob) { [weak self] (response:Result<JobResponse?, NetworkErrors>) in
-            guard self != nil else {
+        NetworkManger.shared.APICaller(from: .postJobs, body: encodedData) { [weak self] (response :Result<JobResponse, networkErrors>) in
+            guard self != nil else{
                 return
-            }
+        }
             switch response {
-            case .success(_) :
-                print("job submitted")
-                break
+            case .success(_):
+                print("job Submitted")
             case .failure(let errorMessage):
-                print("job submission failed with error: \(errorMessage)")
+                print("Job submission failed with error \(errorMessage)")
+                break
             }
         }
     }
@@ -69,8 +66,8 @@ class JobDisplayViewModel:ObservableObject {
     }
     
     /// formatHelper - this is a function used to format the date string received from t
-    /// - Parameter dateStringValue: <#dateStringValue description#>
-    /// - Returns: <#description#>
+    /// - Parameter dateStringValue: This is of type string, that contains the raw string formed date response from the APi response
+    /// - Returns: Returns a string value of the date format of type inatnce: - 24th Feb 2003
     func formatHelper(dateStringValue: String?)->String?{
         if let dateStringValue = dateStringValue{
             let dFInstance = DateFormatter()
@@ -124,8 +121,9 @@ class JobDisplayViewModel:ObservableObject {
     func fetchData(_ searchTerm :String ) -> [Jobs] {
         guard  searchTerm.isEmpty else {
             return jobArray.filter({ jobDetails in
-                searchTerm.split(separator: "").allSatisfy { Substring in
-                    jobDetails.title.lowercased().contains(searchTerm.lowercased())
+                let SearchCriteria = jobDetails.location + jobDetails.title
+                return searchTerm.split(separator: "").allSatisfy { Substring in
+                    SearchCriteria.lowercased().contains(searchTerm.lowercased())
                 }
             })
         }

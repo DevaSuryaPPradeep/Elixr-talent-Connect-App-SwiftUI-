@@ -95,22 +95,6 @@ struct jobDetailsCombine: View {
                 .padding(.top,80)
             Spacer()
         }
-//        .navigationBarBackButtonHidden()
-////        .toolbar(content: {
-////            ToolbarItem (placement: .topBarLeading, content: {
-////                Button {
-////                    print("dash button pressed.")
-////                } label: {
-////                     Image(systemName: "list.dash")
-////                        .foregroundStyle(Color.black)
-////                        .bold()
-////                }
-////            })
-////            ToolbarItem {
-////              LogoImage(logoName: "logo 1", width: 65, height: 65)
-////                    .padding(.trailing,143)
-////            }
-////        })
     }
 }
 
@@ -128,18 +112,3 @@ struct DetailsRow: View {
         })
     }
 }
-//    .toolbar {
-//        ToolbarItem(placement: .navigationBarLeading) {
-//            Button{
-//                print("DashBoard is opened.")
-//            }label: {
-//                Image(systemName: "list.dash")
-//                    .foregroundStyle(Color.black)
-//                    .bold()
-//            }
-//        }
-//        ToolbarItem(placement: .navigationBarTrailing) {
-//            LogoImage(logoName: "logo 1", width: 70, height: 70)
-//                .padding(.trailing,143)
-//        }
-//    }

@@ -27,6 +27,7 @@
 		5A3EFD9F2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFD9E2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift */; };
 		5A3EFDA92B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */; };
 		5A3EFDAB2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */; };
+		5A452AAC2BB7DBBB00D061F1 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A452AAB2BB7DBBB00D061F1 /* NetworkManger.swift */; };
 		5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44A2B9983FB00C3C813 /* Label.swift */; };
 		5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44C2B99842300C3C813 /* TextField.swift */; };
 		5A4BA44F2B99844D00C3C813 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44E2B99844D00C3C813 /* IconImage.swift */; };
@@ -34,9 +35,7 @@
 		5A4E95712BB178D300B62823 /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95702BB178D300B62823 /* MainTabbarView.swift */; };
 		5A4E95732BB17B4200B62823 /* MyJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95722BB17B4200B62823 /* MyJobs.swift */; };
 		5A4E95782BB1805B00B62823 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95772BB1805B00B62823 /* MyProfile.swift */; };
-		5A5F236D2BB58F2D00BCABDE /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5F236C2BB58F2D00BCABDE /* SideMenu */; };
 		5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD18C852B9895C2006481ED /* SplashScreen.swift */; };
-		5AD2860F2BAB5DCC005ECAE6 /* networkMangaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2860E2BAB5DCC005ECAE6 /* networkMangaer.swift */; };
 		5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */; };
 		5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF402B98D5F40090AD14 /* LoginModel.swift */; };
 		5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF432B98D63B0090AD14 /* LoginViewModel.swift */; };
@@ -85,6 +84,7 @@
 		5A3EFDA42B97999C0064BEBE /* ElixrTalentConnectAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElixrTalentConnectAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITests.swift; sourceTree = "<group>"; };
 		5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5A452AAB2BB7DBBB00D061F1 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
 		5A4BA44A2B9983FB00C3C813 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		5A4BA44C2B99842300C3C813 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		5A4BA44E2B99844D00C3C813 /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
@@ -93,7 +93,6 @@
 		5A4E95722BB17B4200B62823 /* MyJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobs.swift; sourceTree = "<group>"; };
 		5A4E95772BB1805B00B62823 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		5AD18C852B9895C2006481ED /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		5AD2860E2BAB5DCC005ECAE6 /* networkMangaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkMangaer.swift; sourceTree = "<group>"; };
 		5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithTitle.swift; sourceTree = "<group>"; };
 		5AE6AF402B98D5F40090AD14 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		5AE6AF432B98D63B0090AD14 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -106,7 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5F236D2BB58F2D00BCABDE /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,40 +134,40 @@
 			path = ViewModel/View;
 			sourceTree = "<group>";
 		};
-		5A0C50C72BA3F92C00079401 /* JobModel */ = {
+		5A0C50C72BA3F92C00079401 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5A0C50C52BA3F92100079401 /* JobDisplayModel.swift */,
 			);
-			path = JobModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5A0C50C82BA3FC3500079401 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				5AD2860E2BAB5DCC005ECAE6 /* networkMangaer.swift */,
+				5A452AAB2BB7DBBB00D061F1 /* NetworkManger.swift */,
 				5A0C50C92BA3FC4800079401 /* APIManager.swift */,
 				5A0C50CB2BA3FFD000079401 /* EndPointType.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		5A0C50CD2BA40C3D00079401 /* HomeViewModel */ = {
+		5A0C50CD2BA40C3D00079401 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				5A0C50CE2BA40C5000079401 /* JobDisplayViewModel.swift */,
 			);
-			path = HomeViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		5A1689EA2BA184C60076D80D /* Home */ = {
+		5A1689EA2BA184C60076D80D /* JobDisplayView */ = {
 			isa = PBXGroup;
 			children = (
 				5A3F87062BA83257003AC2CF /* View */,
-				5A0C50CD2BA40C3D00079401 /* HomeViewModel */,
-				5A0C50C72BA3F92C00079401 /* JobModel */,
+				5A0C50CD2BA40C3D00079401 /* ViewModel */,
+				5A0C50C72BA3F92C00079401 /* Model */,
 			);
-			path = Home;
+			path = JobDisplayView;
 			sourceTree = "<group>";
 		};
 		5A1689EB2BA184DC0076D80D /* SignIN */ = {
@@ -262,7 +260,7 @@
 				5A0C50C82BA3FC3500079401 /* Helper */,
 				5AE6AF472B98D6D30090AD14 /* Login */,
 				5A1689EB2BA184DC0076D80D /* SignIN */,
-				5A1689EA2BA184C60076D80D /* Home */,
+				5A1689EA2BA184C60076D80D /* JobDisplayView */,
 				5AF53C7C2B9B0A9D00DF576A /* Extensions */,
 				5A4BA4492B9983BD00C3C813 /* CustomUIElements */,
 				5AE6AF462B98D6AB0090AD14 /* SplashScreen */,
@@ -428,7 +426,6 @@
 			);
 			name = ElixrTalentConnectApp;
 			packageProductDependencies = (
-				5A5F236C2BB58F2D00BCABDE /* SideMenu */,
 			);
 			productName = ElixrTalentConnectApp;
 			productReference = 5A3EFD8A2B97999A0064BEBE /* ElixrTalentConnectApp.app */;
@@ -503,7 +500,6 @@
 			);
 			mainGroup = 5A3EFD812B97999A0064BEBE;
 			packageReferences = (
-				5A5F236B2BB58F2D00BCABDE /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 5A3EFD8B2B97999A0064BEBE /* Products */;
 			projectDirPath = "";
@@ -554,7 +550,6 @@
 				5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */,
 				5A0C50C62BA3F92100079401 /* JobDisplayModel.swift in Sources */,
 				5A1689E92BA184BE0076D80D /* JobDisplayView.swift in Sources */,
-				5AD2860F2BAB5DCC005ECAE6 /* networkMangaer.swift in Sources */,
 				5A0C50892BA30D2900079401 /* SignUpView.swift in Sources */,
 				5AF53C7B2B9B0A9500DF576A /* StringExtensions.swift in Sources */,
 				5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */,
@@ -565,6 +560,7 @@
 				5A1689F22BA1B5700076D80D /* SignUpViewModel.swift in Sources */,
 				5A0C50CA2BA3FC4800079401 /* APIManager.swift in Sources */,
 				5A28B3D62BB32D7000F197EE /* MyjobsVM.swift in Sources */,
+				5A452AAC2BB7DBBB00D061F1 /* NetworkManger.swift in Sources */,
 				5A4E95782BB1805B00B62823 /* MyProfile.swift in Sources */,
 				5A1689E72BA164550076D80D /* LogoImage.swift in Sources */,
 				5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */,
@@ -901,25 +897,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5A5F236B2BB58F2D00BCABDE /* XCRemoteSwiftPackageReference "SideMenu" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kukushi/SideMenu.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5A5F236C2BB58F2D00BCABDE /* SideMenu */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A5F236B2BB58F2D00BCABDE /* XCRemoteSwiftPackageReference "SideMenu" */;
-			productName = SideMenu;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A3EFD822B97999A0064BEBE /* Project object */;
 }

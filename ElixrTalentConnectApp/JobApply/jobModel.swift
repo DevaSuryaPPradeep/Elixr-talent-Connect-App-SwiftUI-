@@ -17,7 +17,6 @@ struct UserDetails :Codable {
     let gitHubProfile :URL?
 }
 
-
 struct Education :Codable {
     let degree :String
     let school :String

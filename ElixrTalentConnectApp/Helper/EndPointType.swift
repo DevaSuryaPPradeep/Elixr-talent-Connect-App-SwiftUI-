@@ -1,52 +1,59 @@
-//
-//  EndPointType.swift
-//  ElixrTalentConnectApp
-//
-//  Created by Devasurya on 15/03/24.
-//
+////
+////  EndPointType.swift
+////  ElixrTalentConnectApp
+////
+////  Created by Devasurya on 15/03/24.
+////
 
-import Foundation
+//the URL For HTTP get method.
+/// http://localhost:9001/elixr/jobs
 
-/// Network errors
-enum NetworkErrors :Error {
-    case invaidURL
-    case invalidStatusCode
-    case invalidResponse
-    case invalidData
-    case invalidError
-    case custom(String)
+//The URL for HTTP POST method.
+/// http://localhost:9001/elixr/postJobs
+
+
+///baseURL
+enum baseURL :String {
+    case url = "http://localhost:9001/elixr/"
 }
-//http://localhost:9001/elixr/jobs
-/// baseURL
-enum baseURl :String {
-case url = "http://localhost:9001/elixr"
+
+/// Methods for each endpoints.
+enum methods :String {
+    case GET,POST, DELETE
 }
-/// HTTP methods.
-enum HTTPMethod: String {
-    case GET, POST, DELETE
-}
-// 
-/// Endpoints
-enum EndPoints {
-    case getJobList
-    case postJob
+
+/// Decalaration of each endpoints and asociated methods.
+enum endPoints :String{
+    case getJobs
+    case postJobs
     
-    var urlString: String {
+    /// String related to the specific endpoint
+    var URLString :String {
         switch self {
-        case .getJobList:
-            return "/jobs"
-        case .postJob:
-            return "/postjob"
+        case .getJobs:
+            return "jobs"
+        case .postJobs:
+            return "postJobs"
         }
     }
     
-    /// Endpoints wit HTTP METHODS.
-    var method: HTTPMethod {
+    /// Method related to the specific enfdpoint
+    var methods :methods {
         switch self {
-        case .getJobList:
-            return .GET
-        case .postJob:
-            return .POST
+        case .getJobs:
+                .GET
+        case .postJobs:
+                .POST
         }
     }
+}
+
+/// enum of probable network errors that will happen while API fetching.
+enum networkErrors :Error {
+    case  badURL
+    case invalidRequest
+    case badResponse
+    case badStatus
+    case failedtoDecodeResponse
+    case inValidError
 }
