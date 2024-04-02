@@ -17,7 +17,6 @@ class JobDisplayViewModel:ObservableObject {
     @Published var jobArray :[Jobs] = []
     let modelInstance = JobResponse(jobs: [Jobs]())
     
-    
     /// Function to perform API  fetch from the API.
     func fetchData() {
         NetworkManger.shared.APICaller(from: .getJobs) { [weak self] (response : Result<JobResponse?, networkErrors>)  in
@@ -37,14 +36,13 @@ class JobDisplayViewModel:ObservableObject {
         }
     }
     
-    
-    
+    /// Function to perform HTTP Post method .
     func postJobs(){
         let encodedData = try? JSONEncoder().encode(postDataInstance)
         NetworkManger.shared.APICaller(from: .postJobs, body: encodedData) { [weak self] (response :Result<JobResponse, networkErrors>) in
             guard self != nil else{
                 return
-        }
+            }
             switch response {
             case .success(_):
                 print("job Submitted")
@@ -118,7 +116,10 @@ class JobDisplayViewModel:ObservableObject {
     }
     
     
-    func fetchData(_ searchTerm :String ) -> [Jobs] {
+    /// Search Functionality -Is a function to  perform search over fetched jobs by using job title and location.
+    /// - Parameter searchTerm: Searchterm is the container to represent user input from the view, based on this value searching funcitonality is performed.
+    /// - Returns: searchFunctionality returns an array of jobs with job title or location mentioned in the search bar.
+    func searchFunctionality(_ searchTerm :String ) -> [Jobs] {
         guard  searchTerm.isEmpty else {
             return jobArray.filter({ jobDetails in
                 let SearchCriteria = jobDetails.location + jobDetails.title

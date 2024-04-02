@@ -52,7 +52,6 @@ class LoginViewModel :ObservableObject {
         }
     }
     
-    
     //MARK: -  Alphanumeric authentication functions.
     /// isAlphanumeric - fuction is used to perform alphanumeric authentications.
     /// - Parameter string:type String received from the password textfield

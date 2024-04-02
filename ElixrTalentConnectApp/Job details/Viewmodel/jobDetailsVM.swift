@@ -10,9 +10,10 @@ import Foundation
 /// Viewmodel for the detalis view.
 class jobDetailsVm:ObservableObject{
     
-    /// Published Propeerty decalartions to trigger alerts in the View.
+    /// Published Property declarations.
     @Published var alertOnDuplicateEntry :Bool = false
     @Published var alertOnSuccessfulEntry :Bool = false
+    @Published var dataSource :[Jobs] = []
     
     /// favouriteButtonAction - Is a function to set the favourite button action which
     /// - Parameter wishlistVariable: this is the jobID.
@@ -21,23 +22,29 @@ class jobDetailsVm:ObservableObject{
         UserDefaults.standard.set(!isFavourite, forKey: wishlistVariable)
     }
     
-    /// applyButtonPressed - This function make use of two functions ie, getsavedJobList(),isJobAlreadyApplied() and if both of them is true then it appends to an array and set that array to userdefaults by encoding it.
-    /// - Parameter jobInstance: is of type of jobs.
-    func applyButtonPressed(_ jobInstance :Jobs){
-        var savedArray = getsavedJobList()
-        guard  jobInstance == jobInstance , !isJobAlreadyApplied(savedArray, job: jobInstance) else {
+    /// applyButtonPressed - This function returns the prompt message that is required  as the alert in the view.
+    /// - Parameter jobInstance: Is of type of jobs.
+    /// - Returns: Returns the prompt message that is required  as the alert in the view.
+    func applyButtonPressed(_ jobInstance :Jobs)->String? {
+        dataSource = getsavedJobList()
+        guard  jobInstance == jobInstance , !isJobAlreadyApplied(job: jobInstance) else {
             alertOnDuplicateEntry.toggle()
-            return
+            return "You have already applied for this job once."
         }
-        savedArray.append(jobInstance)
+        dataSource.append(jobInstance)
+        dataCast(dataSource)
+        return "Job applied successfully."
+    }
+    
+    /// dataCast - this functoin is responsible for encoding and inserting the applied jobs into the user defaults.
+    /// - Parameter savedDataSource: This data which contain the newly applied jobs.
+    func dataCast(_ savedDataSource:[Jobs]) {
         do {
-            let appliedJobInstance = try JSONEncoder().encode(savedArray)
+            let appliedJobInstance  = try JSONEncoder().encode(savedDataSource)
             UserDefaults.standard.set(appliedJobInstance, forKey: .savedJobsID)
-            alertOnSuccessfulEntry.toggle()
-            print("alertOnSuccessfulEntry---->\(alertOnSuccessfulEntry)")
         }
         catch {
-            print("Decoding failed.")
+            print( " Error while encoding")
         }
     }
     
@@ -53,14 +60,11 @@ class jobDetailsVm:ObservableObject{
     
     /// isJobAlreadyApplied- checks whether the same job is applied twice or not.
     /// - Parameters:
-    ///   - savedjobs: This array is the container for job type related array
     ///   - job: This is the structure for each job.
-    /// - Returns: Returns  a boolean false when savedjobs is empty else it checks whether the savedjobs contain a job with same job id.
-    func isJobAlreadyApplied(_ savedjobs:[Jobs],job:Jobs)->Bool{
-        guard !savedjobs.isEmpty else{
-            return false
-        }
-        let isApplied = savedjobs.contains(where: {$0.id == job.id})
+    /// - Returns: Returns  a boolean value based on the pressence of the job ID in the present array matches the ID returned from the data model.
+    func isJobAlreadyApplied(job:Jobs)->Bool{
+        let isApplied = dataSource.contains(where: {$0.id == job.id})
         return isApplied
     }
 }
+

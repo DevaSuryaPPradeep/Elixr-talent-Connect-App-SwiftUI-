@@ -11,7 +11,6 @@
 //The URL for HTTP POST method.
 /// http://localhost:9001/elixr/postJobs
 
-
 ///baseURL
 enum baseURL :String {
     case url = "http://localhost:9001/elixr/"

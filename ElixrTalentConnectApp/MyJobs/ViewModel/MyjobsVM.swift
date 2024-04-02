@@ -7,12 +7,12 @@
 
 import Foundation
 
-
+/// Viewmodel for MyJobsView.
 class MyjobsVM :ObservableObject{
     
     /// This function get data from the userdefaults by decodimg the from a particular key.
     /// - Returns: Returns an empty array if there is no presaved jobs in the user defalut  or returns an array of job array.
-    func getDataFromSafe() -> [Jobs]{
+    func getDataFromSafe() -> [Jobs] {
         guard let savedJobData = UserDefaults.standard.data(forKey: .savedJobsID),
               let savedjobs = try? JSONDecoder().decode([Jobs].self, from: savedJobData) else {
             print( "no jobs")

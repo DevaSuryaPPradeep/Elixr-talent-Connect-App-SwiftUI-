@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+/// View for MyJobs .
 struct MyJobs: View {
+    
+    /// Declarations of environmentObject and State varibles.
     @StateObject var myJobViewModelInstance = MyjobsVM()
     @State var textToSearch:String = ""
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -25,14 +29,13 @@ struct MyJobs: View {
                             VStack(alignment: .center) {
                                 Spacer()
                                 HStack{
-                                    Spacer()
+//                                    Spacer()
                                     Text(value.title)
                                         .lineLimit(1)
                                         .font(.callout)
                                         .bold()
                                         .foregroundStyle(Color.elixrBlue)
                                         .padding(.leading,2)
-                                    Spacer()
                                     VStack  {
                                         Text(value.status)
                                             .foregroundStyle(Color.white)
@@ -75,8 +78,8 @@ struct MyJobs: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    LogoImage(logoName: "logo 1", width: 65, height: 65)
-                        .padding(.trailing,160)
+                    LogoImage(logoName: "logo 1", width: 70, height: 70)
+                        .padding(.trailing,143)
                 }
             }
         }
@@ -95,6 +98,7 @@ struct MyJobs: View {
         }
     }
 }
-#Preview {
-    MyJobs()
-}
+
+//#Preview {
+//    MyJobs()
+//}

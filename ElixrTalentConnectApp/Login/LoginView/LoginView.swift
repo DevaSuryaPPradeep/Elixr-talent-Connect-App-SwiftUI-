@@ -11,7 +11,7 @@ import LocalAuthentication
 /// View
 struct LoginView: View {
     
-    /// Variable declarations.
+    /// State variable declarations.
     @State var userIDValue: String = ""
     @State var passwordKey: String = ""
     @StateObject var viewModelInstance = LoginViewModel()
@@ -19,8 +19,8 @@ struct LoginView: View {
     @State var alertVariable: Bool = false
     @State var message :String = ""
     @State var signUpBool :Bool = false
-    @State var isPresented :Bool = false
     @Binding var isLogedIn: Bool
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -73,7 +73,6 @@ struct LoginView: View {
         })
         .padding(.init(top: 10.0, leading: -80, bottom: 1, trailing: 20))
     }
-    
     /// emailView - give user acessible  email fields.
     private var emailView:some View {
         HStack {
@@ -129,12 +128,8 @@ struct LoginView: View {
             .alert(isPresented: $alertVariable, content: {
                 Alert(title: Text("Alert"),message: Text(message),dismissButton: .cancel())
             })
-//            .navigationDestination(isPresented: $isValid, destination: {
-//                MainTabbarView()
-//            })
             .padding()
     }
-    
     /// Signuprompt -  contains label and a sign in button.
     private var signUpPrompt :some View {
         HStack{
@@ -164,7 +159,6 @@ struct LoginView: View {
                 .ignoresSafeArea()
         }
     }
-    
 }
 #Preview {
     LoginView( isLogedIn: .constant(false))
