@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ssswiftuisidemenu",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mobile-simformsolutions/SSSwiftUISideMenu.git",
+      "state" : {
+        "revision" : "ff2e0908f4604076a755b16f67d9f24d0c7eb933",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

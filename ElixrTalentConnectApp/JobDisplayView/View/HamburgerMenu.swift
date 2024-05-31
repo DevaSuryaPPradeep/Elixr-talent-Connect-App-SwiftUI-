@@ -7,12 +7,26 @@
 import SSSwiftUISideMenu
 import SwiftUI
 
-struct HamburgerMenu: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-#Preview {
-    HamburgerMenu()
+struct HamburgerMenu: View {
+    @Binding  var openSideMenu: Bool
+    @Binding  var selectedIndex: Int
+    var menuItems:[MenuItem]
+    
+    var body: some View {
+        VStack(alignment: .leading, content: {
+            ForEach(0 ..< menuItems.count,id: \.self) { item in
+                Button{
+                    selectedIndex = item
+                    openSideMenu.toggle()
+                } label: {
+                    HStack{
+                        Image(systemName: menuItems[item].icon)
+                        Text(menuItems[item].title)
+                    }
+                }
+            }
+        })
+        
+    }
 }
