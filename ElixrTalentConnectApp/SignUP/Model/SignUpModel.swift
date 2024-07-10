@@ -38,7 +38,6 @@ extension SignUpModel {
             return  "Enter your full  name here."
         case .password:
             return  "Enter your password here."
-
         case .confirmPassword:
             return  "Re-enter your password here."
         }

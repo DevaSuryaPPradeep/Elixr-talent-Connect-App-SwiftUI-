@@ -11,15 +11,21 @@ import LocalAuthentication
 /// View
 struct LoginView: View {
     
+    /// StateObject declarations.
+    @StateObject var viewModelInstance = LoginViewModel()
+    
     /// State variable declarations.
     @State var userIDValue: String = ""
     @State var passwordKey: String = ""
-    @StateObject var viewModelInstance = LoginViewModel()
     @State var isValid: Bool = false
     @State var alertVariable: Bool = false
     @State var message :String = ""
     @State var signUpBool :Bool = false
+    
+    /// Binding property declarations.
     @Binding var isLogedIn: Bool
+    @Binding var isSignedup: Bool
+    
     
     var body: some View {
         NavigationStack {
@@ -53,6 +59,7 @@ struct LoginView: View {
             LogoImage(logoName: "Logo 1",width:275, height: 400)
         }
     }
+    
     /// Rounded rectangle view which act as a container for other UI elements.
     private var RoundedRectangleView :some View {
         RoundedRectangle(cornerRadius: 25.0)
@@ -61,6 +68,7 @@ struct LoginView: View {
             .frame(width: 400, height: 600)
             .shadow(radius: 10)
     }
+    
     /// Heading to the user interactivew
     private var HeadingView:some View {
         VStack(spacing: 10, content: {
@@ -73,6 +81,7 @@ struct LoginView: View {
         })
         .padding(.init(top: 10.0, leading: -80, bottom: 1, trailing: 20))
     }
+    
     /// emailView - give user acessible  email fields.
     private var emailView:some View {
         HStack {
@@ -86,6 +95,7 @@ struct LoginView: View {
         .cornerRadius(10.0)
         .padding()
     }
+    
     /// PassswordView - contains user interactable password fields.
     private var passwordView :some View {
         HStack {
@@ -99,6 +109,7 @@ struct LoginView: View {
             .cornerRadius(10.0)
             .padding()
     }
+    
     /// signInButton - contains signinButton
     private var signInButton :some View {
         Button {
@@ -137,13 +148,14 @@ struct LoginView: View {
                 .foregroundStyle(Color.black)
             Button {
                 signUpBool.toggle()
+                //isSignedup.toggle()
             } label: {
                 Label(textCaptions: "Signup")
                     .foregroundStyle(Color.orange)
                     .fontWeight(.medium)
             }
             .navigationDestination(isPresented: $signUpBool) {
-                SignUpView()
+                SignUpView( isSignedIn: $isSignedup)
             }
             Spacer()
         }
@@ -161,6 +173,6 @@ struct LoginView: View {
     }
 }
 #Preview {
-    LoginView( isLogedIn: .constant(false))
+    LoginView( isLogedIn: .constant(false), isSignedup: .constant(false))
 }
 

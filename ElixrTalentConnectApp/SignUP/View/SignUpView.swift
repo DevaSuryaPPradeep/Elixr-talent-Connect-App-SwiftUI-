@@ -20,11 +20,12 @@ struct SignUpView: View {
     @State var hidePasswordBool :Bool = false
     @State var hideValue :Bool = false
     @State var alertVaraible :Bool = false
-    @State var alertMessage :String = ""
-    @State var isPresented : Bool = false
+    @State var alertMessage: String = ""
+    @State var isPresented: Bool = false
+    @Binding var isSignedIn: Bool
     
     var body: some View {
-        NavigationStack{
+       // NavigationStack{
             VStack{
                 logo
                 backButton
@@ -42,8 +43,6 @@ struct SignUpView: View {
                 Spacer()
                     .navigationBarBackButtonHidden()
             }
-        }
-        
     }
     /// Contains the logo.
     private var logo :some View {
@@ -83,6 +82,7 @@ struct SignUpView: View {
             let validationResult = viewModelInstance.validateCredentials(fullName: userName, emailAddress: emailAddress, password: password, confirmPassword: confirmPassword)
             if validationResult.isValid{
                 isPresented.toggle()
+                isSignedIn.toggle()
             }
             else {
                 alertMessage = validationResult.message ?? "Unknown error"
@@ -128,7 +128,7 @@ struct SignUpView: View {
     }
 }
 #Preview {
-    SignUpView()
+    SignUpView(isSignedIn: .constant(true))
 }
 
 struct signUpFields :View {
@@ -162,7 +162,6 @@ struct signUpFields :View {
                     Textfields(bindingVariable: $textValue, placeholder: spModel.placeHolder)
                 }
                 })
-            
         }
     }
 }

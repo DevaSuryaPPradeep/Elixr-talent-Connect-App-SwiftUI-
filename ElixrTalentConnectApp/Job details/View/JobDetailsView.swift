@@ -10,12 +10,18 @@ import SwiftUI
 /// View whoch gives a detailed description  to a details for the job.
 struct JobDetailsView: View {
     
-    /// StateObject  &  constant decalrations.
-    @Binding var jobInstance :Jobs
-    @ObservedObject var jobDisplayViewModel :JobDisplayViewModel
+    /// Stateobject representing jobDetailsVm().
     @StateObject var jbDetailsVm :jobDetailsVm = jobDetailsVm()
-    @State var alertVaraible :Bool = false
-    @State var alertMessage :String = ""
+    
+    /// State objects to receieve alert related triggers  & messages.
+    @State var alertVaraible: Bool = false
+    @State var alertMessage: String = ""
+    
+    /// Declaration of binding property to receive a sepecific type of job.
+    @Binding var jobInstance :Jobs
+    
+    /// Varible to receive values from previous view.
+    var jobDisplayViewModel :JobDisplayViewModel
     
     var body: some View {
         ScrollView{
@@ -79,7 +85,6 @@ struct JobDetailsView: View {
                 }
                 else {
                     alertMessage = jbDetailsVm.applyButtonPressed(jobInstance) ?? "Invalid Prompt"
-                    //                        jbDetailsVm.compiler(jbDetailsVm.dataSource)
                     alertVaraible.toggle()
                 }
             } label: {
@@ -149,18 +154,18 @@ struct JobDetailsView: View {
     }
 }
 
-    /// Struct used inside jobHeaderview - reused to create two fields .
-    struct DetailsRow: View {
-        let jobInfo :String
-        let textValue :String
-        var body: some View {
-            VStack(alignment: .leading
-                   , content: {
-                Text(textValue)
-                    .bold()
-                Text(jobInfo)
-                    .font(.subheadline)
-            })
-        }
+/// Struct used inside jobHeaderview - reused to create two fields .
+struct DetailsRow: View {
+    let jobInfo :String
+    let textValue :String
+    var body: some View {
+        VStack(alignment: .leading
+               , content: {
+            Text(textValue)
+                .bold()
+            Text(jobInfo)
+                .font(.subheadline)
+        })
     }
+}
 

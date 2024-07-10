@@ -15,10 +15,19 @@
 		5A1689E92BA184BE0076D80D /* JobDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689E82BA184BE0076D80D /* JobDisplayView.swift */; };
 		5A1689EF2BA1B23B0076D80D /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689EE2BA1B23B0076D80D /* SignUpModel.swift */; };
 		5A1689F22BA1B5700076D80D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689F12BA1B5700076D80D /* SignUpViewModel.swift */; };
-		5A1C93CF2BBC1B8100FA66C8 /* SSSwiftUISideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1C93CE2BBC1B8100FA66C8 /* SSSwiftUISideMenu */; };
+		5A1C93CA2BBBCEB100FA66C8 /* SSSwiftUISideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1C93C92BBBCEB100FA66C8 /* SSSwiftUISideMenu */; };
+		5A1C93D32BBC1DE700FA66C8 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C93D22BBC1DE700FA66C8 /* SignupView.swift */; };
 		5A28B3CA2BB2974C00F197EE /* JobDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28B3C92BB2974C00F197EE /* JobDetailsView.swift */; };
 		5A28B3D02BB2D5F400F197EE /* jobDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28B3CF2BB2D5F400F197EE /* jobDetailsVM.swift */; };
 		5A28B3D62BB32D7000F197EE /* MyjobsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28B3D52BB32D7000F197EE /* MyjobsVM.swift */; };
+		5A29FD252BBEFB6B00B4AE49 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A29FD242BBEFB6B00B4AE49 /* ProfileView.swift */; };
+		5A2FAA872C1AB54100E3C069 /* Mockdata in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FAA862C1AB54100E3C069 /* Mockdata */; };
+		5A2FAA892C1AB56400E3C069 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FAA882C1AB56400E3C069 /* MockDataManager.swift */; };
+		5A35D4E62BBC8266009AF050 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D4E52BBC8266009AF050 /* AcknowledgementView.swift */; };
+		5A35D4E82BBC8281009AF050 /* ContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D4E72BBC8281009AF050 /* ContactInfoView.swift */; };
+		5A35D4EA2BBC82B9009AF050 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D4E92BBC82B9009AF050 /* SettingsView.swift */; };
+		5A35D4EC2BBC82EC009AF050 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D4EB2BBC82EC009AF050 /* PrivacyPolicy.swift */; };
+		5A35D4EE2BBC82FD009AF050 /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D4ED2BBC82FD009AF050 /* ContactUs.swift */; };
 		5A3EFD8E2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */; };
 		5A3EFD902B97999A0064BEBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFD8F2B97999A0064BEBE /* LoginView.swift */; };
 		5A3EFD922B97999C0064BEBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3EFD912B97999C0064BEBE /* Assets.xcassets */; };
@@ -26,7 +35,8 @@
 		5A3EFD9F2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFD9E2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift */; };
 		5A3EFDA92B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */; };
 		5A3EFDAB2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */; };
-		5A411B172C3E5BD5006B12A0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A411B162C3E5BD5006B12A0 /* SignUpView.swift */; };
+		5A411B112C3E525C006B12A0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5A411B102C3E525C006B12A0 /* FirebaseAnalytics */; };
+		5A411B132C3E525C006B12A0 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A411B122C3E525C006B12A0 /* FirebaseAnalyticsSwift */; };
 		5A452AAC2BB7DBBB00D061F1 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A452AAB2BB7DBBB00D061F1 /* NetworkManger.swift */; };
 		5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44A2B9983FB00C3C813 /* Label.swift */; };
 		5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44C2B99842300C3C813 /* TextField.swift */; };
@@ -35,6 +45,7 @@
 		5A4E95712BB178D300B62823 /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95702BB178D300B62823 /* MainTabbarView.swift */; };
 		5A4E95732BB17B4200B62823 /* MyJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95722BB17B4200B62823 /* MyJobs.swift */; };
 		5A4E95782BB1805B00B62823 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95772BB1805B00B62823 /* MyProfile.swift */; };
+		5A75C27D2C3E67AD00698432 /* GoogleService-Info (3).plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A75C27C2C3E67AD00698432 /* GoogleService-Info (3).plist */; };
 		5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD18C852B9895C2006481ED /* SplashScreen.swift */; };
 		5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */; };
 		5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6AF402B98D5F40090AD14 /* LoginModel.swift */; };
@@ -70,9 +81,18 @@
 		5A1689E82BA184BE0076D80D /* JobDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDisplayView.swift; sourceTree = "<group>"; };
 		5A1689EE2BA1B23B0076D80D /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		5A1689F12BA1B5700076D80D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		5A1C93D22BBC1DE700FA66C8 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupView.swift; path = ElixrTalentConnectApp/SignUP/View/SignupView.swift; sourceTree = SOURCE_ROOT; };
 		5A28B3C92BB2974C00F197EE /* JobDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsView.swift; sourceTree = "<group>"; };
 		5A28B3CF2BB2D5F400F197EE /* jobDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobDetailsVM.swift; sourceTree = "<group>"; };
 		5A28B3D52BB32D7000F197EE /* MyjobsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyjobsVM.swift; sourceTree = "<group>"; };
+		5A29FD242BBEFB6B00B4AE49 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5A2FAA862C1AB54100E3C069 /* Mockdata */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mockdata; sourceTree = "<group>"; };
+		5A2FAA882C1AB56400E3C069 /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		5A35D4E52BBC8266009AF050 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementView.swift; sourceTree = "<group>"; };
+		5A35D4E72BBC8281009AF050 /* ContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoView.swift; sourceTree = "<group>"; };
+		5A35D4E92BBC82B9009AF050 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5A35D4EB2BBC82EC009AF050 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		5A35D4ED2BBC82FD009AF050 /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
 		5A3EFD8A2B97999A0064BEBE /* ElixrTalentConnectApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElixrTalentConnectApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppApp.swift; sourceTree = "<group>"; };
 		5A3EFD8F2B97999A0064BEBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -83,7 +103,6 @@
 		5A3EFDA42B97999C0064BEBE /* ElixrTalentConnectAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElixrTalentConnectAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITests.swift; sourceTree = "<group>"; };
 		5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5A411B162C3E5BD5006B12A0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		5A452AAB2BB7DBBB00D061F1 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
 		5A4BA44A2B9983FB00C3C813 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		5A4BA44C2B99842300C3C813 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -92,6 +111,7 @@
 		5A4E95702BB178D300B62823 /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
 		5A4E95722BB17B4200B62823 /* MyJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobs.swift; sourceTree = "<group>"; };
 		5A4E95772BB1805B00B62823 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
+		5A75C27C2C3E67AD00698432 /* GoogleService-Info (3).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (3).plist"; path = "../../../../../../Downloads/GoogleService-Info (3).plist"; sourceTree = "<group>"; };
 		5AD18C852B9895C2006481ED /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithTitle.swift; sourceTree = "<group>"; };
 		5AE6AF402B98D5F40090AD14 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -106,7 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1C93CF2BBC1B8100FA66C8 /* SSSwiftUISideMenu in Frameworks */,
+				5A411B132C3E525C006B12A0 /* FirebaseAnalyticsSwift in Frameworks */,
+				5A411B112C3E525C006B12A0 /* FirebaseAnalytics in Frameworks */,
+				5A1C93CA2BBBCEB100FA66C8 /* SSSwiftUISideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +152,7 @@
 		5A0C50852BA3078A00079401 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5A411B162C3E5BD5006B12A0 /* SignUpView.swift */,
+				5A1C93D22BBC1DE700FA66C8 /* SignupView.swift */,
 			);
 			name = View;
 			path = ViewModel/View;
@@ -230,6 +252,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5A29FD262BBEFB7A00B4AE49 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5A29FD242BBEFB6B00B4AE49 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		5A35D4E42BBC821F009AF050 /* Random Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A35D4E52BBC8266009AF050 /* AcknowledgementView.swift */,
+				5A35D4E72BBC8281009AF050 /* ContactInfoView.swift */,
+				5A35D4E92BBC82B9009AF050 /* SettingsView.swift */,
+				5A35D4EB2BBC82EC009AF050 /* PrivacyPolicy.swift */,
+				5A35D4ED2BBC82FD009AF050 /* ContactUs.swift */,
+			);
+			path = "Random Views";
+			sourceTree = "<group>";
+		};
 		5A3EFD812B97999A0064BEBE = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +295,8 @@
 		5A3EFD8C2B97999A0064BEBE /* ElixrTalentConnectApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
+				5A35D4E42BBC821F009AF050 /* Random Views */,
 				5A4E957B2BB1A26200B62823 /* Job details */,
 				5A4E95762BB1804300B62823 /* My Profile */,
 				5A4E95752BB1802400B62823 /* MyJobs */,
@@ -265,8 +309,7 @@
 				5AF53C7C2B9B0A9D00DF576A /* Extensions */,
 				5A4BA4492B9983BD00C3C813 /* CustomUIElements */,
 				5AE6AF462B98D6AB0090AD14 /* SplashScreen */,
-				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
-				5A3EFD912B97999C0064BEBE /* Assets.xcassets */,
+				5A29FD262BBEFB7A00B4AE49 /* Profile */,
 				5A3EFD932B97999C0064BEBE /* Preview Content */,
 			);
 			path = ElixrTalentConnectApp;
@@ -275,6 +318,7 @@
 		5A3EFD932B97999C0064BEBE /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				5A3EFD912B97999C0064BEBE /* Assets.xcassets */,
 				5A3EFD942B97999C0064BEBE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -284,6 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				5A3EFD9E2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift */,
+				5A2FAA862C1AB54100E3C069 /* Mockdata */,
+				5A2FAA882C1AB56400E3C069 /* MockDataManager.swift */,
 			);
 			path = ElixrTalentConnectAppTests;
 			sourceTree = "<group>";
@@ -406,6 +452,7 @@
 		5AF53C7C2B9B0A9D00DF576A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5A75C27C2C3E67AD00698432 /* GoogleService-Info (3).plist */,
 				5AF53C7A2B9B0A9500DF576A /* StringExtensions.swift */,
 			);
 			path = Extensions;
@@ -428,7 +475,9 @@
 			);
 			name = ElixrTalentConnectApp;
 			packageProductDependencies = (
-				5A1C93CE2BBC1B8100FA66C8 /* SSSwiftUISideMenu */,
+				5A1C93C92BBBCEB100FA66C8 /* SSSwiftUISideMenu */,
+				5A411B102C3E525C006B12A0 /* FirebaseAnalytics */,
+				5A411B122C3E525C006B12A0 /* FirebaseAnalyticsSwift */,
 			);
 			productName = ElixrTalentConnectApp;
 			productReference = 5A3EFD8A2B97999A0064BEBE /* ElixrTalentConnectApp.app */;
@@ -503,7 +552,8 @@
 			);
 			mainGroup = 5A3EFD812B97999A0064BEBE;
 			packageReferences = (
-				5A1C93CD2BBC1B8100FA66C8 /* XCRemoteSwiftPackageReference "SSSwiftUISideMenu" */,
+				5A1C93C82BBBCEB100FA66C8 /* XCRemoteSwiftPackageReference "SSSwiftUISideMenu" */,
+				5A411B0F2C3E525B006B12A0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5A3EFD8B2B97999A0064BEBE /* Products */;
 			projectDirPath = "";
@@ -522,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A3EFD952B97999C0064BEBE /* Preview Assets.xcassets in Resources */,
+				5A75C27D2C3E67AD00698432 /* GoogleService-Info (3).plist in Resources */,
 				5A3EFD922B97999C0064BEBE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +581,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2FAA872C1AB54100E3C069 /* Mockdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,26 +606,32 @@
 				5A1689EF2BA1B23B0076D80D /* SignUpModel.swift in Sources */,
 				5AE6AF412B98D5F40090AD14 /* LoginModel.swift in Sources */,
 				5A0C50C62BA3F92100079401 /* JobDisplayModel.swift in Sources */,
+				5A35D4E82BBC8281009AF050 /* ContactInfoView.swift in Sources */,
 				5A1689E92BA184BE0076D80D /* JobDisplayView.swift in Sources */,
 				5AF53C7B2B9B0A9500DF576A /* StringExtensions.swift in Sources */,
+				5A35D4EC2BBC82EC009AF050 /* PrivacyPolicy.swift in Sources */,
 				5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */,
+				5A29FD252BBEFB6B00B4AE49 /* ProfileView.swift in Sources */,
 				5A4E95732BB17B4200B62823 /* MyJobs.swift in Sources */,
 				5A28B3CA2BB2974C00F197EE /* JobDetailsView.swift in Sources */,
 				5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */,
 				5AEC6AE12BA88F0D009097F8 /* jobModel.swift in Sources */,
 				5A1689F22BA1B5700076D80D /* SignUpViewModel.swift in Sources */,
+				5A1C93D32BBC1DE700FA66C8 /* SignupView.swift in Sources */,
 				5A0C50CA2BA3FC4800079401 /* APIManager.swift in Sources */,
 				5A28B3D62BB32D7000F197EE /* MyjobsVM.swift in Sources */,
 				5A452AAC2BB7DBBB00D061F1 /* NetworkManger.swift in Sources */,
 				5A4E95782BB1805B00B62823 /* MyProfile.swift in Sources */,
+				5A35D4EE2BBC82FD009AF050 /* ContactUs.swift in Sources */,
 				5A1689E72BA164550076D80D /* LogoImage.swift in Sources */,
+				5A35D4E62BBC8266009AF050 /* AcknowledgementView.swift in Sources */,
 				5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */,
 				5A4BA4512B99D77000C3C813 /* PasswordField.swift in Sources */,
 				5A3EFD902B97999A0064BEBE /* LoginView.swift in Sources */,
+				5A35D4EA2BBC82B9009AF050 /* SettingsView.swift in Sources */,
 				5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */,
 				5A4BA44F2B99844D00C3C813 /* IconImage.swift in Sources */,
 				5A28B3D02BB2D5F400F197EE /* jobDetailsVM.swift in Sources */,
-				5A411B172C3E5BD5006B12A0 /* SignUpView.swift in Sources */,
 				5A3EFD8E2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift in Sources */,
 				5A0C50CC2BA3FFD000079401 /* EndPointType.swift in Sources */,
 			);
@@ -584,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A3EFD9F2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift in Sources */,
+				5A2FAA892C1AB56400E3C069 /* MockDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,7 +962,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A1C93CD2BBC1B8100FA66C8 /* XCRemoteSwiftPackageReference "SSSwiftUISideMenu" */ = {
+		5A1C93C82BBBCEB100FA66C8 /* XCRemoteSwiftPackageReference "SSSwiftUISideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mobile-simformsolutions/SSSwiftUISideMenu.git";
 			requirement = {
@@ -911,13 +970,31 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5A411B0F2C3E525B006B12A0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A1C93CE2BBC1B8100FA66C8 /* SSSwiftUISideMenu */ = {
+		5A1C93C92BBBCEB100FA66C8 /* SSSwiftUISideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A1C93CD2BBC1B8100FA66C8 /* XCRemoteSwiftPackageReference "SSSwiftUISideMenu" */;
+			package = 5A1C93C82BBBCEB100FA66C8 /* XCRemoteSwiftPackageReference "SSSwiftUISideMenu" */;
 			productName = SSSwiftUISideMenu;
+		};
+		5A411B102C3E525C006B12A0 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A411B0F2C3E525B006B12A0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5A411B122C3E525C006B12A0 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A411B0F2C3E525B006B12A0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

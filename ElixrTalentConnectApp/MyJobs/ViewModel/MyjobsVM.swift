@@ -8,7 +8,7 @@
 import Foundation
 
 /// Viewmodel for MyJobsView.
-class MyjobsVM :ObservableObject{
+class MyjobsVM :ObservableObject {
     
     /// This function get data from the userdefaults by decodimg the from a particular key.
     /// - Returns: Returns an empty array if there is no presaved jobs in the user defalut  or returns an array of job array.

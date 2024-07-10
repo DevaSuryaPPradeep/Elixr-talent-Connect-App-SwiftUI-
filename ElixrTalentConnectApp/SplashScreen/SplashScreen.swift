@@ -11,15 +11,15 @@ struct SplashScreen: View {
     
     /// Variable Decarations.
     @State private var isActive: Bool = false
-    
     @State private var isLoggedIn: Bool = false
+    @State private var isSignedUp :Bool =  false
     
     var body: some View {
-        if isActive {
-            if isLoggedIn {
+        if isActive  {
+            if isLoggedIn || isSignedUp {
                  MainTabbarView()
             } else {
-                LoginView(isLogedIn: $isLoggedIn)
+                LoginView(isLogedIn: $isLoggedIn, isSignedup: $isSignedUp)
             }
         }
         else  {
@@ -30,7 +30,7 @@ struct SplashScreen: View {
                     .ignoresSafeArea()
             }
             .onAppear{
-                DispatchQueue.main.asyncAfter(deadline: .now()+2){
+                DispatchQueue.main.async {
                     isActive.toggle()
                 }
             }

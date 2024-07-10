@@ -13,9 +13,10 @@ struct MyJobs: View {
     /// Declarations of environmentObject and State varibles.
     @StateObject var myJobViewModelInstance = MyjobsVM()
     @State var textToSearch:String = ""
+    @Binding var isOpen :Bool
     
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack {
                 Text("Applied jobs")
                     .font(.title)
@@ -29,7 +30,6 @@ struct MyJobs: View {
                             VStack(alignment: .center) {
                                 Spacer()
                                 HStack{
-//                                    Spacer()
                                     Text(value.title)
                                         .lineLimit(1)
                                         .font(.callout)
@@ -67,21 +67,21 @@ struct MyJobs: View {
                 }
             }
             .searchable(text:$textToSearch,prompt: Text("Type in the job title here"))
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        
+            .toolbar (content: {
+                ToolbarItem (placement: .topBarLeading, content: {
+                    Button{
+                        isOpen.toggle()
                     } label: {
                         Image(systemName: "list.dash")
                             .foregroundStyle(Color.black)
                             .bold()
                     }
-                }
-                ToolbarItem(placement: .topBarTrailing) {
+                })
+                ToolbarItem(placement: .navigationBarTrailing) {
                     LogoImage(logoName: "logo 1", width: 70, height: 70)
-                        .padding(.trailing,143)
+                        .padding(.trailing,240)
                 }
-            }
+            })
         }
     }
     
@@ -99,6 +99,6 @@ struct MyJobs: View {
     }
 }
 
-//#Preview {
-//    MyJobs()
-//}
+#Preview {
+    MyJobs(isOpen: .constant(false))
+}

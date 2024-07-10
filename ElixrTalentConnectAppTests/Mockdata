@@ -1,0 +1,83 @@
+
+{
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Software Engineer",
+      "department": "Engineering",
+      "postedDate": "2024-01-10",
+      "deadlineDate": "2024-04-10",
+      "description": "We are looking for a skilled software engineer to develop and maintain innovative software applications. The ideal candidate should have a strong background in computer science and programming.",
+      "responsibilities": "Develop and maintain software applications.",
+      "requirements": "Bachelor's degree in Computer Science.",
+      "location": "Cochin",
+      "salary": "₹6,500,000 - ₹8,700,000 per year",
+      "status": "Scheduled"
+    },
+    {
+      "id": "2",
+      "title": "System Analyst",
+      "department": "IT",
+      "postedDate": "2024-01-10",
+      "deadlineDate": "2024-04-10",
+      "description": "We are seeking an experienced system analyst to analyze and improve our IT systems. The candidate should have a solid understanding of system analysis and problem-solving skills.",
+      "responsibilities": "Analyze and improve IT systems.",
+      "requirements": "Experience in system analysis.",
+      "location": "Trivandrum",
+      "salary": "₹5,200,000 - ₹7,150,000 per year",
+      "status": "Rejected"
+    },
+    {
+      "id": "3",
+      "title": "Marketing Specialist",
+      "department": "Marketing",
+      "postedDate": "2024-01-10",
+      "deadlineDate": "2024-04-10",
+      "description": "Join our dynamic marketing team as a Marketing Specialist. The role involves planning and executing effective marketing campaigns. The ideal candidate should have a degree in marketing or a related field.",
+      "responsibilities": "Plan and execute marketing campaigns.",
+      "requirements": "Marketing or related degree.",
+      "location": "Chennai",
+      "salary": "₹4,550,000 - ₹5,850,000 per year",
+      "status": "In Progress"
+    },
+    {
+      "id": "4",
+      "title": "Data Scientist",
+      "department": "Analytics",
+      "postedDate": "2024-01-10",
+      "deadlineDate": "2024-04-10",
+      "description": "We are hiring a Data Scientist to analyze large datasets and provide valuable insights. Strong analytical and programming skills are essential for this role.",
+      "responsibilities": "Analyze large datasets, develop models, and provide insights.",
+      "requirements": "Master's degree in Data Science or related field.",
+      "location": "Hyderabad",
+      "salary": "₹8,700,000 - ₹11,310,000 per year",
+      "status": "Scheduled"
+    },
+    {
+      "id": "5",
+      "title": "UX Designer",
+      "department": "Design",
+      "postedDate": "2024-01-12",
+      "deadlineDate": "2024-04-12",
+      "description": "We are looking for a talented UX Designer to create amazing user experiences. The ideal candidate should have a strong portfolio and experience in designing user-centric solutions.",
+      "responsibilities": "Create amazing user experiences.",
+      "requirements": "Bachelor's degree in Design or related field.",
+      "location": "Chennai",
+      "salary": "₹5,800,000 - ₹7,500,000 per year",
+      "status": "In Progress"
+    },
+    {
+      "id": "6",
+      "title": "Financial Analyst",
+      "department": "Finance",
+      "postedDate": "2024-01-15",
+      "deadlineDate": "2024-04-15",
+      "description": "We are hiring a Financial Analyst to provide insights into financial performance and assist in financial planning. Strong analytical skills and financial acumen are required.",
+      "responsibilities": "Provide insights into financial performance and assist in financial planning.",
+      "requirements": "Bachelor's degree in Finance or related field.",
+      "location": "Cochin",
+      "salary": "₹6,200,000 - ₹8,000,000 per year",
+      "status": "Scheduled"
+    }
+  ]
+}

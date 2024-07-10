@@ -67,7 +67,6 @@ struct PostData :Codable {
     let reference : [References]
 }
 
-
 let demoUserDetails = UserDetails(fulllname: "Dev", email:URL(string : "dev@gmail.com"), phone: "9495777202", address: "Veedu(H) Thrissur", linkedInProfile :URL(string:"dev@linkedin") , gitHubProfile: URL(string: "dev@gmail.com"))
 let educationHistory = [Education(degree: "BCA", school: "Old School Trafford", graduation_year: 2023),Education(degree: "Mca", school: "Kottayum", graduation_year: 2024)]
 let experienceValue = [Experience(position: "Hr", company: "Elixr", start_date: "2-03-23", end_date: "2-09-23", responsibilities: ["Training and Development","Employee relationShip" ,"Orgaininsing Payroll","Benefits Administrations"])]

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// Child View representing logo image.
 struct LogoImage: View {
     let logoName :String
     let width :CGFloat

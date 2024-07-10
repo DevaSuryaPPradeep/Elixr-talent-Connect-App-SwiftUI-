@@ -4,19 +4,20 @@
 //
 //  Created by Devasurya on 13/03/24.
 //
-
+//import SSSwiftUISideMenu
 import SwiftUI
 
 /// View for JobDisplayView.
 struct JobDisplayView: View {
     
-    /// Declarationof state property and State object instance.
+    /// Declaration of state property and State object instance.
     @StateObject var viewModelInstance =  JobDisplayViewModel()
     @State var textToSearch: String = ""
     @State var isPresented :Bool = false
-    @State private var isMenuOpen = false
+    @Binding var openSideMenu :Bool
     @State  private var selectedJob :Jobs = Jobs(id: "", title: "", department: "", postedDate: "", deadlineDate: "", description: "", responsibilities: "", requirements: "", location: "", salary: "", status: "" )
-        
+    
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -27,32 +28,31 @@ struct JobDisplayView: View {
                         JobDetailsView(jobInstance: $selectedJob, jobDisplayViewModel:  viewModelInstance)
                     }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button{
-                        print("DashBoard is opened.")
-                    }label: {
-                        Image(systemName: "list.dash")
-                            .foregroundStyle(Color.black)
-                            .bold()
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    LogoImage(logoName: "logo 1", width: 70, height: 70)
-                        .padding(.trailing,143)
-                }
-            }
             .navigationBarBackButtonHidden()
             .onAppear {
                 viewModelInstance.fetchData()
             }
+            .toolbar(content: {
+                ToolbarItem (placement: .topBarLeading, content: {
+                    Button{
+                        openSideMenu.toggle()
+                    } label: {
+                        Image(systemName: "list.dash")
+                            .foregroundStyle(Color.black)
+                            .bold()
+                    }
+                })
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    LogoImage(logoName: "logo 1", width: 70, height: 70)
+                        .padding(.trailing,240)
+                }
+            })
             .alert(isPresented: $viewModelInstance.alertValue) {
                 Alert(title: Text("Alert"), message: Text("Sorry, can't connect at the moment. Please try again.")
                     .bold())
             }
         }
     }
-    
     /// Heading view for the jobList view.
     private var viewHeading :some View {
         Text("Recomented Jobs")
@@ -65,7 +65,7 @@ struct JobDisplayView: View {
     /// List inside job list view.
     private var jobRow :some View {
         List(viewModelInstance.searchFunctionality(textToSearch)) { value in
-            VStack(alignment: .leading) {
+//            VStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 10.0)
                     .stroke(style: StrokeStyle())
                     .frame(width: 340,height: 200)
@@ -123,16 +123,22 @@ struct JobDisplayView: View {
                         }
                     }
                     .background(Color.elixrlightGray)
-            }
+//            }
             .onTapGesture {
                 isPresented.toggle()
                 selectedJob = value
             }
         }
     }
+    private var searchBar: some View {
+        Textfields(bindingVariable: $viewModelInstance.searchValue,placeholder: "Search your job here...")
+    }
+    
+    
+    
 }
 
-//#Preview {
-//    JobDisplayView()
-//}
+#Preview {
+    JobDisplayView( openSideMenu: .constant(false))
+}
 
