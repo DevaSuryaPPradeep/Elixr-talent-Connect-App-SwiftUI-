@@ -16,7 +16,6 @@
 		5A1689EF2BA1B23B0076D80D /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689EE2BA1B23B0076D80D /* SignUpModel.swift */; };
 		5A1689F22BA1B5700076D80D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1689F12BA1B5700076D80D /* SignUpViewModel.swift */; };
 		5A1C93CF2BBC1B8100FA66C8 /* SSSwiftUISideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1C93CE2BBC1B8100FA66C8 /* SSSwiftUISideMenu */; };
-		5A1C93D12BBC1BEE00FA66C8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C93D02BBC1BEE00FA66C8 /* SignUpView.swift */; };
 		5A28B3CA2BB2974C00F197EE /* JobDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28B3C92BB2974C00F197EE /* JobDetailsView.swift */; };
 		5A28B3D02BB2D5F400F197EE /* jobDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28B3CF2BB2D5F400F197EE /* jobDetailsVM.swift */; };
 		5A28B3D62BB32D7000F197EE /* MyjobsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28B3D52BB32D7000F197EE /* MyjobsVM.swift */; };
@@ -27,6 +26,7 @@
 		5A3EFD9F2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFD9E2B97999C0064BEBE /* ElixrTalentConnectAppTests.swift */; };
 		5A3EFDA92B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */; };
 		5A3EFDAB2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */; };
+		5A411B172C3E5BD5006B12A0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A411B162C3E5BD5006B12A0 /* SignUpView.swift */; };
 		5A452AAC2BB7DBBB00D061F1 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A452AAB2BB7DBBB00D061F1 /* NetworkManger.swift */; };
 		5A4BA44B2B9983FB00C3C813 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44A2B9983FB00C3C813 /* Label.swift */; };
 		5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BA44C2B99842300C3C813 /* TextField.swift */; };
@@ -70,7 +70,6 @@
 		5A1689E82BA184BE0076D80D /* JobDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDisplayView.swift; sourceTree = "<group>"; };
 		5A1689EE2BA1B23B0076D80D /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		5A1689F12BA1B5700076D80D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		5A1C93D02BBC1BEE00FA66C8 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = ../../../../../../../SignUpView.swift; sourceTree = "<group>"; };
 		5A28B3C92BB2974C00F197EE /* JobDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsView.swift; sourceTree = "<group>"; };
 		5A28B3CF2BB2D5F400F197EE /* jobDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobDetailsVM.swift; sourceTree = "<group>"; };
 		5A28B3D52BB32D7000F197EE /* MyjobsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyjobsVM.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		5A3EFDA42B97999C0064BEBE /* ElixrTalentConnectAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElixrTalentConnectAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3EFDA82B97999C0064BEBE /* ElixrTalentConnectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITests.swift; sourceTree = "<group>"; };
 		5A3EFDAA2B97999C0064BEBE /* ElixrTalentConnectAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElixrTalentConnectAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5A411B162C3E5BD5006B12A0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		5A452AAB2BB7DBBB00D061F1 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
 		5A4BA44A2B9983FB00C3C813 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		5A4BA44C2B99842300C3C813 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		5A0C50852BA3078A00079401 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5A1C93D02BBC1BEE00FA66C8 /* SignUpView.swift */,
+				5A411B162C3E5BD5006B12A0 /* SignUpView.swift */,
 			);
 			name = View;
 			path = ViewModel/View;
@@ -562,7 +562,6 @@
 				5A4BA44D2B99842300C3C813 /* TextField.swift in Sources */,
 				5AEC6AE12BA88F0D009097F8 /* jobModel.swift in Sources */,
 				5A1689F22BA1B5700076D80D /* SignUpViewModel.swift in Sources */,
-				5A1C93D12BBC1BEE00FA66C8 /* SignUpView.swift in Sources */,
 				5A0C50CA2BA3FC4800079401 /* APIManager.swift in Sources */,
 				5A28B3D62BB32D7000F197EE /* MyjobsVM.swift in Sources */,
 				5A452AAC2BB7DBBB00D061F1 /* NetworkManger.swift in Sources */,
@@ -574,6 +573,7 @@
 				5AE6AF442B98D63B0090AD14 /* LoginViewModel.swift in Sources */,
 				5A4BA44F2B99844D00C3C813 /* IconImage.swift in Sources */,
 				5A28B3D02BB2D5F400F197EE /* jobDetailsVM.swift in Sources */,
+				5A411B172C3E5BD5006B12A0 /* SignUpView.swift in Sources */,
 				5A3EFD8E2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift in Sources */,
 				5A0C50CC2BA3FFD000079401 /* EndPointType.swift in Sources */,
 			);
