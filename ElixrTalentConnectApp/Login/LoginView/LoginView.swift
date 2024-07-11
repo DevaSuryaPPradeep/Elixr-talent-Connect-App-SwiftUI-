@@ -50,6 +50,9 @@ struct LoginView: View {
                     .padding(.all)
                 }
             }
+            .onAppear(perform: {
+                
+            })
         }
     }
     

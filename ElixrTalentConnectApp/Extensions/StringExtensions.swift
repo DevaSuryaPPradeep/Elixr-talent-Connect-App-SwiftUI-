@@ -23,6 +23,12 @@ extension String {
            return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) != nil
        }
     
+    static var experienceLevelID = "user_Level"
     static var userKey = "uniqueJobId"
     static var savedJobsID = "savedJobID"
+    static var loginView = "LoginView "
+    static var signUpView = "SignUpview"
+    static var jobDisplayView = "JobDisplayView"
+    static var viewIdentifier = "view_name"
+    
 }

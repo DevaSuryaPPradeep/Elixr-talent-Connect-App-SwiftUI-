@@ -16,8 +16,9 @@ class JobDisplayViewModel:ObservableObject {
     /// Published properties & constants declarations.
     @Published var alertValue :Bool = false
     @Published var jobArray :[Jobs] = []
-    let modelInstance = JobResponse(jobs: [Jobs]())
     @Published var searchValue: String = ""
+    
+    let modelInstance = JobResponse(jobs: [Jobs]())
     
     /// Function to perform API  fetch from the API.
     func fetchData() {
@@ -32,8 +33,9 @@ class JobDisplayViewModel:ObservableObject {
                         self.jobArray =  mydata
                     }
                 }
-            case .failure(_):
-                print("error--->\(networkErrors.failedtoDecodeResponse)")
+            case .failure(let errorValue):
+                alertValue.toggle()
+                print("error--->\(errorValue.localizedDescription)")
             }
         }
     }
