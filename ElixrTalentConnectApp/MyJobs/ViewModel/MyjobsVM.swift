@@ -18,7 +18,6 @@ class MyjobsVM :ObservableObject {
             print( "no jobs")
             return []
         }
-        print("jobs details=----->\(savedjobs)")
         return savedjobs
     }
     

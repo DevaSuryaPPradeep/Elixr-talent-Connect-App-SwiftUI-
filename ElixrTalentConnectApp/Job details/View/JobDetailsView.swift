@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-/// View whoch gives a detailed description  to a details for the job.
+/// View which gives a detailed description  to a details for the job.
 struct JobDetailsView: View {
     
     /// Stateobject representing jobDetailsVm().
     @StateObject var jbDetailsVm :jobDetailsVm = jobDetailsVm()
     
-    /// State objects to receieve alert related triggers  & messages.
+    /// State objects to receieve alert related triggers.
     @State var alertVaraible: Bool = false
+    
+    /// State objects to receieve alert related  messages.
     @State var alertMessage: String = ""
     
     /// Declaration of binding property to receive a sepecific type of job.
@@ -26,11 +28,12 @@ struct JobDetailsView: View {
     var body: some View {
         ScrollView{
             jobDetailsHeaderview
-                .padding()
             IndividualDetails
             UserInterActiveArea
-                .padding(.top,80)
             Spacer()
+                .onAppear {
+                    AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName : "JobDetailsView"])
+                }
         }
     }
     
@@ -41,7 +44,6 @@ struct JobDetailsView: View {
                 RoundedRectangle(cornerRadius: 10.0)
                     .foregroundStyle(Color.gray.opacity(0.5))
                     .frame(width: 390,height: 260)
-                
                 Image("BackgroundImage")
                     .resizable()
                     .opacity(0.5)
@@ -72,6 +74,7 @@ struct JobDetailsView: View {
                 }
             }
         }
+        .padding()
         .foregroundStyle(Color.elixrBlue)
     }
     
@@ -107,14 +110,15 @@ struct JobDetailsView: View {
                     .font(.system(size: 13.0))
                 Button {
                     jobInstance.isFavouriteBool = true
-                    print("jobinstance --> \(jobInstance.isFavouriteBool)")
                     jobDisplayViewModel.fetchData()
+                    AnalyticsManager.shared.addFavouriteJobEvent(favouriteJobId: jobInstance.title)
                 } label: {
                     jobInstance.isFavouriteBool ?
                     Image( "heartButton") : Image(systemName: "heart")
                 }
             }
         })
+        .padding(.top,80)
     }
     
     /// Individual view subjecting Job Description , Responsibilties & Qualifications.

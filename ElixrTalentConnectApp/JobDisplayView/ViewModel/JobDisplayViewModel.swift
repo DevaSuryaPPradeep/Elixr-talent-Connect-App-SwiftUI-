@@ -18,7 +18,6 @@ class JobDisplayViewModel:ObservableObject {
     @Published var jobArray :[Jobs] = []
     @Published var searchValue: String = ""
     
-    let modelInstance = JobResponse(jobs: [Jobs]())
     
     /// Function to perform API  fetch from the API.
     func fetchData() {
@@ -34,8 +33,11 @@ class JobDisplayViewModel:ObservableObject {
                     }
                 }
             case .failure(let errorValue):
-                alertValue.toggle()
-                print("error--->\(errorValue.localizedDescription)")
+                DispatchQueue.main.async {
+                    self.alertValue.toggle()
+                    print("self.alertValue----->\(self.alertValue)")
+                    print("error--->\(errorValue.localizedDescription)")
+                }
             }
         }
     }

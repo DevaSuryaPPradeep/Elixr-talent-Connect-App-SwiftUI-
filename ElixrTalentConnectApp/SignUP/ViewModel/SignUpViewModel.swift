@@ -8,9 +8,19 @@
 import Foundation
 
 
+/// Class representing signupviewmodel.
 class SignUpViewModel :ObservableObject {
+    
+    /// Published property to store an array of signupmodel
     @Published var dataArray :[SignUpModel] = [.fullName,.emailAddress,.password,.confirmPassword]
     
+    /// Function to create a logic of authentications.
+    /// - Parameters:
+    ///   - fullName: Represents the fullname state varible.
+    ///   - emailAddress: Represents the email  state varible.
+    ///   - password: Represents the password state varible.
+    ///   - confirmPassword: Represents the confirm password  state varible.
+    /// - Returns: A tuple containing a boolean value and a message.
     func validateCredentials(fullName:String?,emailAddress:String?,password:String?,confirmPassword:String?)->(isValid:Bool,message:String?){
         guard let fullName = fullName, !fullName.isEmpty else {
             return (false, "Full name field is required.")
@@ -32,11 +42,8 @@ class SignUpViewModel :ObservableObject {
         }
         return(true,nil)
     }
-        
     
-    
-    //MARK: -  Alphanumeric authentication functions.
-    /// isAlphanumeric - fuction is used to perform alphanumeric authentications.
+    /// isAlphanumeric - function is used to perform alphanumeric authentications.
     /// - Parameter string:type String received from the password textfield
     /// - Returns: return is of type  bool
     func isAlphanumeric(_ string: String) -> Bool {

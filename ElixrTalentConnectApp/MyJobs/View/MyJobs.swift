@@ -10,9 +10,13 @@ import SwiftUI
 /// View for MyJobs .
 struct MyJobs: View {
     
-    /// Declarations of environmentObject and State varibles.
+    /// Declaration of stateobject instance.
     @StateObject var myJobViewModelInstance = MyjobsVM()
+    
+    /// State varible representing the value inside the search bar.
     @State var textToSearch:String = ""
+    
+    /// Binding property to trigger th side menu.
     @Binding var isOpen :Bool
     
     var body: some View {
@@ -22,50 +26,11 @@ struct MyJobs: View {
                     .font(.title)
                     .bold()
                     .padding(.leading,-130)
-                List( myJobViewModelInstance.switchDataWithSearch(textToSearch)) { value  in
-                    RoundedRectangle(cornerRadius: 10.0)
-                        .stroke(style: StrokeStyle())
-                        .frame(width: 340,height: 200)
-                        .overlay {
-                            VStack(alignment: .center) {
-                                Spacer()
-                                HStack{
-                                    Text(value.title)
-                                        .lineLimit(1)
-                                        .font(.callout)
-                                        .bold()
-                                        .foregroundStyle(Color.elixrBlue)
-                                        .padding(.leading,2)
-                                    VStack  {
-                                        Text(value.status)
-                                            .foregroundStyle(Color.white)
-                                            .font(.system(size: 12.0))
-                                            .bold()
-                                    }
-                                    .padding(.all)
-                                    .background(Color(colorSwitcher(value.status)))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                                    .frame(width :150, height: 40)
-                                    .padding(.top,10)
-                                }
-                                .padding(.top,-10)
-                                Spacer()
-                                Text(value.location)
-                                    .font(.system(size: 13.0))
-                                    .foregroundStyle(Color.gray)
-                                    .bold()
-                                    .padding(.horizontal,-100)
-                                Spacer()
-                                Text(value.description)
-                                    .lineLimit(10)
-                                    .foregroundStyle(Color.elixrBlue)
-                                    .font(.system(size: 10.0))
-                                    .padding()
-                                Spacer()
-                            }
-                        }
-                }
+                listView
             }
+            .onAppear(perform: {
+                AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName: "MyJobs"])
+            })
             .searchable(text:$textToSearch,prompt: Text("Type in the job title here"))
             .toolbar (content: {
                 ToolbarItem (placement: .topBarLeading, content: {
@@ -95,6 +60,53 @@ struct MyJobs: View {
             return Color.red
         } else {
             return Color.gray
+        }
+    }
+    
+    /// View containg list of applied jobs.
+    private var listView: some View {
+        List( myJobViewModelInstance.switchDataWithSearch(textToSearch)) { value  in
+            RoundedRectangle(cornerRadius: 10.0)
+                .stroke(style: StrokeStyle())
+                .frame(width: 340,height: 200)
+                .overlay {
+                    VStack(alignment: .center) {
+                        Spacer()
+                        HStack{
+                            Text(value.title)
+                                .lineLimit(1)
+                                .font(.callout)
+                                .bold()
+                                .foregroundStyle(Color.elixrBlue)
+                                .padding(.leading,2)
+                            VStack  {
+                                Text(value.status)
+                                    .foregroundStyle(Color.white)
+                                    .font(.system(size: 12.0))
+                                    .bold()
+                            }
+                            .padding(.all)
+                            .background(Color(colorSwitcher(value.status)))
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                            .frame(width :150, height: 40)
+                            .padding(.top,10)
+                        }
+                        .padding(.top,-10)
+                        Spacer()
+                        Text(value.location)
+                            .font(.system(size: 13.0))
+                            .foregroundStyle(Color.gray)
+                            .bold()
+                            .padding(.horizontal,-100)
+                        Spacer()
+                        Text(value.description)
+                            .lineLimit(10)
+                            .foregroundStyle(Color.elixrBlue)
+                            .font(.system(size: 10.0))
+                            .padding()
+                        Spacer()
+                    }
+                }
         }
     }
 }

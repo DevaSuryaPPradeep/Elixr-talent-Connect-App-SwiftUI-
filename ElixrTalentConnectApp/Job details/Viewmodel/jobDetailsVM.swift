@@ -10,9 +10,13 @@ import Foundation
 /// Viewmodel for the detalis view.
 class jobDetailsVm:ObservableObject{
     
-    /// Published Property declarations.
+    /// Published Property  to store an alert boolean value which will trigger an alert on a duplicate data entry.
     @Published var alertOnDuplicateEntry :Bool = false
+    
+    /// A published property to trigger on successful data entry.
     @Published var alertOnSuccessfulEntry :Bool = false
+    
+    /// An array to store applied jobs
     @Published var dataSource :[Jobs] = []
     
     /// favouriteButtonAction - Is a function to set the favourite button action which

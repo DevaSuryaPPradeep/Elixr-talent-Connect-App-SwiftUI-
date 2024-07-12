@@ -6,7 +6,27 @@
 //
 
 import Foundation
+
 extension String {
+    
+    /// Represents a key that represents a user's expenience level.
+    static var experienceLevelID = "user_Level"
+    
+    /// Represents a key that represents a use'rs unique job id .
+    static var userKey = "uniqueJobId"
+    
+    /// Represents a key that represents a user's unique saved job ID.
+    static var savedJobsID = "savedJobID"
+    
+    /// Represents a key that represents a user's current interaction with a screen .
+    static var viewIdentifier = "view_name"
+    
+    /// Represents a key that represents a user's current interaction with a screen, speceifically the screen name .
+    static var viewInfoName = "view_info_key"
+    
+    static var favouriteJobInfo = "favorite_job_info"
+    
+    static var favouriteJob_key  = "favourite_job_id"
     
     /// isValidEmail - a regex method for validating user inputs.
     /// - Returns: bool
@@ -18,17 +38,4 @@ extension String {
         }
         return false
     }
-    
-    var isAlphanumeric: Bool {
-           return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) != nil
-       }
-    
-    static var experienceLevelID = "user_Level"
-    static var userKey = "uniqueJobId"
-    static var savedJobsID = "savedJobID"
-    static var loginView = "LoginView "
-    static var signUpView = "SignUpview"
-    static var jobDisplayView = "JobDisplayView"
-    static var viewIdentifier = "view_name"
-    
 }

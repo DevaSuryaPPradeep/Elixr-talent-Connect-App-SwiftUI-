@@ -10,45 +10,65 @@ import SwiftUI
 /// View for the signUp.
 struct SignUpView: View {
     
-    /// Variable declarations.
+    /// Stateobject declaration of type SignUpViewModel.
+    @StateObject var viewModelInstance: SignUpViewModel = SignUpViewModel()
+    
+    /// @Environment  varible declaration to dismiss a view.
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var viewModelInstance = SignUpViewModel()
+    
+    /// State variable to represent email address.
     @State var emailAddress :String = ""
+    
+    /// State variable to represent user name
     @State var  userName :String = ""
+    
+    /// State variable to represent password.
     @State var  password :String = ""
+    
+    /// State variable to confirm the password.
     @State var  confirmPassword :String = ""
-    @State var hidePasswordBool :Bool = false
-    @State var hideValue :Bool = false
+    
+    /// State variable to trigger an alert event.
     @State var alertVaraible :Bool = false
+    
+    /// State variable to store an alert message when a alert is triggered.
     @State var alertMessage: String = ""
+    
+    /// State variable to trigger a navigation event.
     @State var isPresented: Bool = false
+    
+    /// @binding property to let the view hierachy inform about the rootview.
     @Binding var isSignedIn: Bool
     
     var body: some View {
-       // NavigationStack{
-            VStack{
-                logo
-                backButton
-                titleTag
-                listView
-                signUPButton
-                    .navigationDestination(isPresented: $isPresented, destination: {
-                        MainTabbarView()
-                    })
-                    .alert(isPresented: $alertVaraible, content: {
-                        Alert(title: Text("Alert"),message: Text (alertMessage),dismissButton: .default(Text("Fix It.")))
-                    })
-              signInprompt
+        VStack{
+            logo
+            backButton
+            titleTag
+            listView
+            signUPButton
+                .navigationDestination(isPresented: $isPresented, destination: {
+                    MainTabbarView()
+                })
+                .alert(isPresented: $alertVaraible, content: {
+                    Alert(title: Text("Alert"),message: Text (alertMessage),dismissButton: .default(Text("Fix It.")))
+                })
+            signInprompt
                 .listStyle(.inset)
-                Spacer()
-                    .navigationBarBackButtonHidden()
-            }
+            Spacer()
+                .navigationBarBackButtonHidden()
+        }
+        .onAppear {
+            AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName : "SignUpView"])
+        }
     }
+    
     /// Contains the logo.
     private var logo :some View {
         LogoImage(logoName: "Logo 1", width: 100, height: 80)
             .padding(.leading, 200)
     }
+    
     /// contains a back button.
     private var backButton:some View {
         Button {
@@ -63,6 +83,7 @@ struct SignUpView: View {
         }
         .padding(.leading,-40)
     }
+    
     /// contains the title tag.
     private var titleTag :some View{
         Label(textCaptions: "Create Account.")
@@ -70,14 +91,16 @@ struct SignUpView: View {
             .font(.system(size: 30))
             .bold()
     }
+    
     /// Contains the  list.
     private var listView :some View {
         List(viewModelInstance.dataArray,id: \.self) {value in
             signUpFields(spModel: value, textValue: setupSignup(for: value))
         }
     }
+    
     /// Contains the sign up button.
-        private var signUPButton :some View {
+    private var signUPButton :some View {
         Button {
             let validationResult = viewModelInstance.validateCredentials(fullName: userName, emailAddress: emailAddress, password: password, confirmPassword: confirmPassword)
             if validationResult.isValid{
@@ -114,6 +137,9 @@ struct SignUpView: View {
         }
     }
     
+    /// Private function to set binding property for each category of the textfield.
+    /// - Parameter variable: Defines an instance of the signup model
+    /// - Returns: Returns a binding property to binded with each textfield.
     private func setupSignup (for variable :SignUpModel)->Binding<String> {
         switch variable {
         case .fullName: 
@@ -131,10 +157,18 @@ struct SignUpView: View {
     SignUpView(isSignedIn: .constant(true))
 }
 
+/// View representing user interactive textfield with a icon.
 struct signUpFields :View {
+    
+    /// Instance of the signup model
     let spModel :SignUpModel
+    
+    /// State variable to swap between normal textfield and securefield.
     @State var isHidden: Bool = false
+    
+    /// Creates unitque binding property for  each textfield.
     @Binding var  textValue :String
+    
     var body: some View {
         HStack{
             IconImage(imageValue: spModel.iconImage)
@@ -161,7 +195,7 @@ struct signUpFields :View {
                 else {
                     Textfields(bindingVariable: $textValue, placeholder: spModel.placeHolder)
                 }
-                })
+            })
         }
     }
 }

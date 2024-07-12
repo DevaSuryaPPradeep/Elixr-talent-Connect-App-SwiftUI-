@@ -23,7 +23,7 @@ struct JobDisplayView: View {
     @State  private var selectedJob :Jobs = Jobs(id: "", title: "", department: "", postedDate: "", deadlineDate: "", description: "", responsibilities: "", requirements: "", location: "", salary: "", status: "" )
     
     /// State variable to show an alert when the view is appeared.
-    @State var showAlert: Bool = false
+    @State var showAlert: Bool = true
     
     /// Binding varible that decides the functioning of the sidemenu.
     @Binding var openSideMenu :Bool
@@ -33,15 +33,10 @@ struct JobDisplayView: View {
             VStack {
                 viewHeading
                 jobRow
-                    .searchable(text: $textToSearch, placement: .navigationBarDrawer(displayMode: .always), prompt: "Enter the job title here.")
-                    .navigationDestination(isPresented: $isPresented) {
-                        JobDetailsView(jobInstance: $selectedJob, jobDisplayViewModel:  viewModelInstance)
-                    }
             }
             .navigationBarBackButtonHidden()
             .onAppear {
                 viewModelInstance.fetchData()
-                showAlert.toggle()
             }
             .toolbar(content: {
                 ToolbarItem (placement: .topBarLeading, content: {
@@ -61,6 +56,20 @@ struct JobDisplayView: View {
             .alert(isPresented: $viewModelInstance.alertValue) {
                 Alert(title: Text("Alert"), message: Text("Sorry, can't connect at the moment. Please try again.")
                     .bold())
+            }
+            .confirmationDialog("Choose your experience level", isPresented: $showAlert,titleVisibility: .visible) {
+                Button("Fresher") {
+                    AnalyticsManager.shared.userExperienceLevelProperty(experienceLevel: "Fresher")
+                    showAlert.toggle()
+                }
+                Button("Intermediate") {
+                    AnalyticsManager.shared.userExperienceLevelProperty(experienceLevel: "Intermediate")
+                    showAlert.toggle()
+                }
+                Button("Experienced") {
+                    AnalyticsManager.shared.userExperienceLevelProperty(experienceLevel: "Experienced")
+                    showAlert.toggle()
+                }
             }
         }
     }
@@ -95,6 +104,7 @@ struct JobDisplayView: View {
                             Button {
                                 viewModelInstance.isFavouriteButtonTapped(jobID: value.id)
                                 viewModelInstance.fetchData()
+                                AnalyticsManager.shared.addFavouriteJobEvent(favouriteJobId: .favouriteJobInfo, params: [.favouriteJob_key : value.title])
                             } label: {
                                 value.isFavouriteBool ? Image (systemName: "heart.fill")
                                     .foregroundStyle(Color.red)
@@ -137,7 +147,12 @@ struct JobDisplayView: View {
                 .onTapGesture {
                     isPresented.toggle()
                     selectedJob = value
+                    AnalyticsManager.shared.userJobInteresetEvent(jobInterest: "selected_kob", params: ["job_viewed" : "\(selectedJob.title)"])
                 }
+        }
+        .searchable(text: $textToSearch, placement: .navigationBarDrawer(displayMode: .always), prompt: "Enter the job title here.")
+        .navigationDestination(isPresented: $isPresented) {
+            JobDetailsView(jobInstance: $selectedJob, jobDisplayViewModel:  viewModelInstance)
         }
     }
     

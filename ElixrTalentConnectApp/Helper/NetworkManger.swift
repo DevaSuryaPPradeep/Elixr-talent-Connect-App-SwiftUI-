@@ -7,14 +7,19 @@
 
 import Foundation
 
+/// Class responsible to make genric API call.
 final class  NetworkManger :Codable{
     
+    /// Implementation of singleton architecture.
     static let shared = NetworkManger()
-    
     private init() {}
     
+    /// Funtion to make genric API call.
+    /// - Parameters:
+    ///   - endpoint: Describes the API end point.
+    ///   - body: Describes the value that should be passed at time of http post method
+    ///   - completion: Is an @escaping closure containg result value of a genric type.
     func APICaller <T:Codable>(from endpoint:endPoints,body : Data? = nil, completion :@escaping(Result<T,networkErrors>)->Void) {
-        
         guard let url = URL(string: baseURL.url.rawValue + endpoint.URLString) else {
             completion(.failure(networkErrors.badURL))
             print("error--->\(networkErrors.badURL)")
@@ -42,7 +47,7 @@ final class  NetworkManger :Codable{
             }
             guard let httpResponse = response as? HTTPURLResponse,(200...299).contains(httpResponse.statusCode)
             else{
-              return  completion(.failure(networkErrors.badResponse))
+                return  completion(.failure(networkErrors.badResponse))
             }
             if let safeData = data {
                 do {

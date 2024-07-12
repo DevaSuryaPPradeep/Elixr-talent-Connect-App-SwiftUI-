@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+/// View representing the profile of the user.
 struct ProfileView: View {
     
-    /// State property declarations.
+    /// State varible to track user selection.
     @State var isSelected: Bool = false
+    
+    /// Binding property to trigger a sidemenu.
     @Binding var openSidemenu: Bool
     
     var body: some View {
@@ -54,6 +57,9 @@ struct ProfileView: View {
                     .foregroundStyle(Color.elixrBlue)
             }
         }
+        .onAppear(perform: {
+            AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier,params: [.viewInfoName : "ProfileView"])
+        })
         .toolbar(content: {
             ToolbarItem (placement: .topBarLeading, content: {
                 Button{
@@ -69,7 +75,7 @@ struct ProfileView: View {
                     .padding(.trailing,240)
             }
         })
-
+        
     }
     
     /// HeaderView for the profile View.
