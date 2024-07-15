@@ -22,7 +22,6 @@ final class  NetworkManger :Codable{
     func APICaller <T:Codable>(from endpoint:endPoints,body : Data? = nil, completion :@escaping(Result<T,networkErrors>)->Void) {
         guard let url = URL(string: baseURL.url.rawValue + endpoint.URLString) else {
             completion(.failure(networkErrors.badURL))
-            print("error--->\(networkErrors.badURL)")
             return
         }
         var urlRequest = URLRequest(url: url)

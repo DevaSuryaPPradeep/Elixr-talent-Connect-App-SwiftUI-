@@ -16,7 +16,7 @@ class jobDetailsVm:ObservableObject{
     /// A published property to trigger on successful data entry.
     @Published var alertOnSuccessfulEntry :Bool = false
     
-    /// An array to store applied jobs
+    /// An array to store applied jobs.
     @Published var dataSource :[Jobs] = []
     
     /// favouriteButtonAction - Is a function to set the favourite button action which

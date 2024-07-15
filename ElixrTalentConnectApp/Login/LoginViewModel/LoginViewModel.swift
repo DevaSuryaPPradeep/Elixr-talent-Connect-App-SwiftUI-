@@ -10,6 +10,9 @@ import LocalAuthentication
 
 class LoginViewModel :ObservableObject {
     
+    @Published var userIDValue: String = ""
+    @Published var passwordKey: String = ""
+    
     /// validateUserCredentials -  validate the user inputs  - email and password field
     /// - Parameter model: Login Model.
     /// - Returns: A Tuple which contains a boolean and a message of type string.

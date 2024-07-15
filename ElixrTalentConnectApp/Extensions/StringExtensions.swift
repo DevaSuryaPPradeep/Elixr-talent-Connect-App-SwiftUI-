@@ -24,9 +24,20 @@ extension String {
     /// Represents a key that represents a user's current interaction with a screen, speceifically the screen name .
     static var viewInfoName = "view_info_key"
     
+    /// String representing the details of favourite job info.
     static var favouriteJobInfo = "favorite_job_info"
     
+    /// String representing the parameter key for favouriteJobInfo.
     static var favouriteJob_key  = "favourite_job_id"
+    
+    /// String representing the user whether the user is premium or not.
+    static var userIsPremiumFlag = "user_is_premium"
+    
+    /// String representing the selected job
+    static var selectedJob = "selected_kob"
+    
+    /// String representing the viewed jobs.
+    static var jobViewed = "job_viewed"
     
     /// isValidEmail - a regex method for validating user inputs.
     /// - Returns: bool

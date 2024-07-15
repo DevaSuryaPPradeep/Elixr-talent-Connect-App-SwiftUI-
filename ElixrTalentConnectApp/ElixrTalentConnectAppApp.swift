@@ -13,6 +13,7 @@ struct ElixrTalentConnectAppApp: App {
     
     @UIApplicationDelegateAdaptor(Appdelegate.self) var delegate
 
+
     var body: some Scene {
         WindowGroup {
             SplashScreen()
@@ -23,7 +24,6 @@ struct ElixrTalentConnectAppApp: App {
 class Appdelegate: NSObject,UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
-        print("Firebase configured..")
         return true
     }
 }

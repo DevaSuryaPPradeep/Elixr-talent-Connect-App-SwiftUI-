@@ -11,11 +11,8 @@ import SwiftUI
 struct MyJobs: View {
     
     /// Declaration of stateobject instance.
-    @StateObject var myJobViewModelInstance = MyjobsVM()
-    
-    /// State varible representing the value inside the search bar.
-    @State var textToSearch:String = ""
-    
+    @StateObject var myJobViewModelInstance: MyjobsVM = MyjobsVM()
+        
     /// Binding property to trigger th side menu.
     @Binding var isOpen :Bool
     
@@ -31,11 +28,12 @@ struct MyJobs: View {
             .onAppear(perform: {
                 AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName: "MyJobs"])
             })
-            .searchable(text:$textToSearch,prompt: Text("Type in the job title here"))
+            .searchable(text:$myJobViewModelInstance.textToSearch,prompt: Text("Type in the job title here"))
             .toolbar (content: {
                 ToolbarItem (placement: .topBarLeading, content: {
                     Button{
                         isOpen.toggle()
+                        AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName : "Hamburgermenu"])
                     } label: {
                         Image(systemName: "list.dash")
                             .foregroundStyle(Color.black)
@@ -48,6 +46,7 @@ struct MyJobs: View {
                 }
             })
         }
+       
     }
     
     /// Decides the background color  status view.
@@ -65,7 +64,7 @@ struct MyJobs: View {
     
     /// View containg list of applied jobs.
     private var listView: some View {
-        List( myJobViewModelInstance.switchDataWithSearch(textToSearch)) { value  in
+        List( myJobViewModelInstance.switchDataWithSearch(myJobViewModelInstance.textToSearch)) { value  in
             RoundedRectangle(cornerRadius: 10.0)
                 .stroke(style: StrokeStyle())
                 .frame(width: 340,height: 200)

@@ -12,11 +12,10 @@ import LocalAuthentication
 struct LoginView: View {
     
     /// StateObject declarations.
-    @StateObject var viewModelInstance = LoginViewModel()
+    @StateObject var loginViewModelInstance = LoginViewModel()
     
     /// State variable declarations.
-    @State var userIDValue: String = ""
-    @State var passwordKey: String = ""
+  
     @State var isValid: Bool = false
     @State var alertVariable: Bool = false
     @State var message :String = ""
@@ -50,9 +49,6 @@ struct LoginView: View {
                     .padding(.all)
                 }
             }
-            .onAppear(perform: {
-                
-            })
         }
     }
     
@@ -90,7 +86,7 @@ struct LoginView: View {
         HStack {
             IconImage(imageValue: "envelope")
                 .padding(3)
-            Textfields(bindingVariable: $userIDValue,placeholder: "Email")
+            Textfields(bindingVariable: $loginViewModelInstance.userIDValue,placeholder: "Email")
         }
         .frame(width: 300,height: 40)
         .background(Color.gray.opacity(0.3))
@@ -104,7 +100,7 @@ struct LoginView: View {
         HStack {
             IconImage(imageValue: "lock")
                 .padding(3)
-            passwordField(passwordVariable: $passwordKey, placeHolder: "Enter the password here.")
+            passwordField(passwordVariable: $loginViewModelInstance.passwordKey, placeHolder: "Enter the password here.")
         }  .frame(width: 300,height: 40)
             .clipShape(RoundedRectangle(cornerRadius: 5))
             .background(Color.gray.opacity(0.3))
@@ -116,13 +112,11 @@ struct LoginView: View {
     /// signInButton - contains signinButton
     private var signInButton :some View {
         Button {
-            let validationResult = viewModelInstance.validateUserCredentials(model: LoginModel(userID: userIDValue, passwordID: passwordKey))
-            
+            let validationResult = loginViewModelInstance.validateUserCredentials(model: LoginModel(userID: loginViewModelInstance.userIDValue, passwordID: loginViewModelInstance.passwordKey))
             if validationResult.isValid {
-                viewModelInstance.authenticateWithBiometrics {  (success, error) in
+                loginViewModelInstance.authenticateWithBiometrics {  (success, error) in
                     if success {
-                        print("Authentication successful")
-                        isValid.toggle()
+                        CrashAnalyticsManger.shared.setUserId(userID: loginViewModelInstance.userIDValue)
                         isLogedIn.toggle()
                     } else {
                         print("Authentication Failed")

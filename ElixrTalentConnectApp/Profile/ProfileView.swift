@@ -64,6 +64,7 @@ struct ProfileView: View {
             ToolbarItem (placement: .topBarLeading, content: {
                 Button{
                     openSidemenu.toggle()
+                    AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName : "Hamburgermenu"])
                 } label: {
                     Image(systemName: "list.dash")
                         .foregroundStyle(Color.black)
@@ -113,7 +114,11 @@ struct ProfileView: View {
                 }
                 .foregroundStyle(Color.elixrBlue)
                 Button {
-                    print("Button Pressed")
+                    /// Firing an  mismatch logic to intentionaly crash the app.
+                    CrashAnalyticsManger.shared.addCrashLogs(message: "Edit profile button clicked.")
+                    let personalDetailsFile: String? = nil
+                    let string2 = personalDetailsFile!
+                    fatalError("Crash was triggered")
                 }label: {
                     Text("Edit Profile")
                         .foregroundStyle(Color.white)

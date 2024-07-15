@@ -4,7 +4,6 @@
 //
 //  Created by Devasurya on 13/03/24.
 //
-//import SSSwiftUISideMenu
 import SwiftUI
 
 /// View for JobDisplayView.
@@ -12,7 +11,7 @@ struct JobDisplayView: View {
     
     /// Declaration of state property and State object instance.
     @StateObject var viewModelInstance =  JobDisplayViewModel()
-    
+        
     /// State variable to hold the word in the search bar.
     @State var textToSearch: String = ""
     
@@ -37,18 +36,20 @@ struct JobDisplayView: View {
             .navigationBarBackButtonHidden()
             .onAppear {
                 viewModelInstance.fetchData()
+                AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName : "JobDisplayView"])
             }
             .toolbar(content: {
                 ToolbarItem (placement: .topBarLeading, content: {
                     Button{
                         openSideMenu.toggle()
+                        AnalyticsManager.shared.aboutScreenEvent(ScreenName: .viewIdentifier, params: [.viewInfoName : "Hamburgermenu"])
                     } label: {
                         Image(systemName: "list.dash")
                             .foregroundStyle(Color.black)
                             .bold()
                     }
                 })
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .topBarTrailing) {
                     LogoImage(logoName: "logo 1", width: 70, height: 70)
                         .padding(.trailing,240)
                 }
@@ -147,7 +148,7 @@ struct JobDisplayView: View {
                 .onTapGesture {
                     isPresented.toggle()
                     selectedJob = value
-                    AnalyticsManager.shared.userJobInteresetEvent(jobInterest: "selected_kob", params: ["job_viewed" : "\(selectedJob.title)"])
+                    AnalyticsManager.shared.userJobInteresetEvent(jobInterest: .selectedJob, params: [.jobViewed : "\(selectedJob.title)"])
                 }
         }
         .searchable(text: $textToSearch, placement: .navigationBarDrawer(displayMode: .always), prompt: "Enter the job title here.")
@@ -162,7 +163,7 @@ struct JobDisplayView: View {
     }
 }
 
-#Preview {
-    JobDisplayView( openSideMenu: .constant(false))
-}
+//#Preview {
+//    JobDisplayView( openSideMenu: .constant(false))
+//}
 

@@ -51,9 +51,6 @@ struct MainTabbarView: View {
     }
 }
 
-#Preview {
-    MainTabbarView()
-}
 
 
 

@@ -10,12 +10,20 @@ import Foundation
 /// Viewmodel for MyJobsView.
 class MyjobsVM :ObservableObject {
     
+    @Published var appliedJobs: [Jobs] = []
+    
+    /// Published property representing the value inside the search bar.
+    @Published var textToSearch:String = ""
+    
+    init(){
+        getDataFromSafe()
+    }
+    
     /// This function get data from the userdefaults by decodimg the from a particular key.
     /// - Returns: Returns an empty array if there is no presaved jobs in the user defalut  or returns an array of job array.
     func getDataFromSafe() -> [Jobs] {
         guard let savedJobData = UserDefaults.standard.data(forKey: .savedJobsID),
               let savedjobs = try? JSONDecoder().decode([Jobs].self, from: savedJobData) else {
-            print( "no jobs")
             return []
         }
         return savedjobs
@@ -34,6 +42,10 @@ class MyjobsVM :ObservableObject {
                 }
             })
         }
-        return dataSource
+        return getDataFromSafe()
+    }
+    
+    func dataProvider(textToSearch: String) -> [Jobs] {
+      return textToSearch.isEmpty ? getDataFromSafe() : switchDataWithSearch(textToSearch)
     }
 }

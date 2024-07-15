@@ -37,6 +37,9 @@ struct SignUpView: View {
     /// State variable to trigger a navigation event.
     @State var isPresented: Bool = false
     
+    ///State varible to store the value of user as premium or not.
+    @State var isPremiumUser: Bool = false
+    
     /// @binding property to let the view hierachy inform about the rootview.
     @Binding var isSignedIn: Bool
     
@@ -53,6 +56,7 @@ struct SignUpView: View {
                 .alert(isPresented: $alertVaraible, content: {
                     Alert(title: Text("Alert"),message: Text (alertMessage),dismissButton: .default(Text("Fix It.")))
                 })
+            toggleButton
             signInprompt
                 .listStyle(.inset)
             Spacer()
@@ -106,6 +110,8 @@ struct SignUpView: View {
             if validationResult.isValid{
                 isPresented.toggle()
                 isSignedIn.toggle()
+                CrashAnalyticsManger.shared.setUserId(userID: userName)
+                CrashAnalyticsManger.shared.addCrashLogs(message: "Crashed appeared while Signing up.")
             }
             else {
                 alertMessage = validationResult.message ?? "Unknown error"
@@ -122,7 +128,6 @@ struct SignUpView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10.0))
     }
     }
-    
     /// Contains the sign in button along with a prompt.
     private var signInprompt :some View {
         HStack{
@@ -137,12 +142,31 @@ struct SignUpView: View {
         }
     }
     
+    /// Contains the sign in button along with a prompt.
+    private var toggleButton :some View {
+        HStack{
+            Text("Tap to check premium features")
+            Toggle(isOn: $isPremiumUser, label: {
+                Text( isPremiumUser ? "On" : "OFF")
+            })
+            .toggleStyle(.button)
+            .onChange(of: isPremiumUser) { _,newValue in
+                if newValue {
+                    CrashAnalyticsManger.shared.setUserKey(customValue: "Premium", key: .userIsPremiumFlag)
+                }
+                else {
+                    CrashAnalyticsManger.shared.setUserKey(customValue: "Normal", key: .userIsPremiumFlag)
+                }
+            }
+        }
+    }
+    
     /// Private function to set binding property for each category of the textfield.
     /// - Parameter variable: Defines an instance of the signup model
     /// - Returns: Returns a binding property to binded with each textfield.
     private func setupSignup (for variable :SignUpModel)->Binding<String> {
         switch variable {
-        case .fullName: 
+        case .fullName:
             return $userName
         case .emailAddress:
             return $emailAddress

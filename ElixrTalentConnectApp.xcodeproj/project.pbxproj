@@ -43,6 +43,8 @@
 		5A4E95732BB17B4200B62823 /* MyJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95722BB17B4200B62823 /* MyJobs.swift */; };
 		5A4E95782BB1805B00B62823 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E95772BB1805B00B62823 /* MyProfile.swift */; };
 		5A75C27F2C3E87A400698432 /* Analytics Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A75C27E2C3E87A400698432 /* Analytics Manager.swift */; };
+		5AB6C4752C4105B100B714D7 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB6C4742C4105B100B714D7 /* FirebaseCrashlytics */; };
+		5AB6C4782C41424900B714D7 /* CrashAnalyticsManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6C4772C41424900B714D7 /* CrashAnalyticsManger.swift */; };
 		5AD18C862B9895C2006481ED /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD18C852B9895C2006481ED /* SplashScreen.swift */; };
 		5ADDC3D22BA2046A00A4370A /* TextFieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */; };
 		5ADEFA262C3F9728008C895B /* SSSwiftUISideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 5ADEFA252C3F9728008C895B /* SSSwiftUISideMenu */; };
@@ -115,6 +117,7 @@
 		5A4E95722BB17B4200B62823 /* MyJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobs.swift; sourceTree = "<group>"; };
 		5A4E95772BB1805B00B62823 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		5A75C27E2C3E87A400698432 /* Analytics Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analytics Manager.swift"; sourceTree = "<group>"; };
+		5AB6C4772C41424900B714D7 /* CrashAnalyticsManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashAnalyticsManger.swift; sourceTree = "<group>"; };
 		5AD18C852B9895C2006481ED /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		5ADDC3D12BA2046A00A4370A /* TextFieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithTitle.swift; sourceTree = "<group>"; };
 		5ADEFA292C3F9E48008C895B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 				5ADEFA2E2C3F9E6F008C895B /* FirebaseAnalyticsSwift in Frameworks */,
 				5ADEFA332C3F9EB8008C895B /* AdSupport.framework in Frameworks */,
 				5ADEFA2C2C3F9E6F008C895B /* FirebaseAnalytics in Frameworks */,
+				5AB6C4752C4105B100B714D7 /* FirebaseCrashlytics in Frameworks */,
 				5ADEFA262C3F9728008C895B /* SSSwiftUISideMenu in Frameworks */,
 				5ADEFA312C3F9E9C008C895B /* FirebaseAuth in Frameworks */,
 			);
@@ -181,6 +185,7 @@
 				5A0C50CB2BA3FFD000079401 /* EndPointType.swift */,
 				5ADEFA292C3F9E48008C895B /* GoogleService-Info.plist */,
 				5A75C27E2C3E87A400698432 /* Analytics Manager.swift */,
+				5AB6C4772C41424900B714D7 /* CrashAnalyticsManger.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -308,7 +313,6 @@
 				5A3EFD8D2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift */,
 				5A35D4E42BBC821F009AF050 /* Random Views */,
 				5A4E957B2BB1A26200B62823 /* Job details */,
-				5A4E95762BB1804300B62823 /* My Profile */,
 				5A4E95752BB1802400B62823 /* MyJobs */,
 				5A4E95742BB17B6700B62823 /* Main Tab view */,
 				5A3F87072BA8327E003AC2CF /* JobApply */,
@@ -410,6 +414,7 @@
 		5A4E957B2BB1A26200B62823 /* Job details */ = {
 			isa = PBXGroup;
 			children = (
+				5A4E95762BB1804300B62823 /* My Profile */,
 				5A28B3CD2BB2D5D300F197EE /* View */,
 				5A28B3CE2BB2D5D900F197EE /* Viewmodel */,
 			);
@@ -485,6 +490,7 @@
 				5A3EFD862B97999A0064BEBE /* Sources */,
 				5A3EFD872B97999A0064BEBE /* Frameworks */,
 				5A3EFD882B97999A0064BEBE /* Resources */,
+				5AB6C4762C4106E300B714D7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -496,6 +502,7 @@
 				5ADEFA2B2C3F9E6F008C895B /* FirebaseAnalytics */,
 				5ADEFA2D2C3F9E6F008C895B /* FirebaseAnalyticsSwift */,
 				5ADEFA302C3F9E9C008C895B /* FirebaseAuth */,
+				5AB6C4742C4105B100B714D7 /* FirebaseCrashlytics */,
 			);
 			productName = ElixrTalentConnectApp;
 			productReference = 5A3EFD8A2B97999A0064BEBE /* ElixrTalentConnectApp.app */;
@@ -612,6 +619,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5AB6C4762C4106E300B714D7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A3EFD862B97999A0064BEBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -653,6 +685,7 @@
 				5A28B3D02BB2D5F400F197EE /* jobDetailsVM.swift in Sources */,
 				5A3EFD8E2B97999A0064BEBE /* ElixrTalentConnectAppApp.swift in Sources */,
 				5A0C50CC2BA3FFD000079401 /* EndPointType.swift in Sources */,
+				5AB6C4782C41424900B714D7 /* CrashAnalyticsManger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +849,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"ElixrTalentConnectApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -832,9 +866,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = d.company.ElixrTalentConnectApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -861,9 +899,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = d.company.ElixrTalentConnectApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1000,6 +1042,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5AB6C4742C4105B100B714D7 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A411B0F2C3E525B006B12A0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		5ADEFA252C3F9728008C895B /* SSSwiftUISideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A1C93C82BBBCEB100FA66C8 /* XCRemoteSwiftPackageReference "SSSwiftUISideMenu" */;

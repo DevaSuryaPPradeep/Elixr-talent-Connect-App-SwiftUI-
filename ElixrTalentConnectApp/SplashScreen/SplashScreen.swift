@@ -13,11 +13,12 @@ struct SplashScreen: View {
     @State private var isActive: Bool = false
     @State private var isLoggedIn: Bool = false
     @State private var isSignedUp :Bool =  false
-    
+    @StateObject private var loginViewModel = LoginViewModel()
+
     var body: some View {
         if isActive  {
             if isLoggedIn || isSignedUp {
-                 MainTabbarView()
+                MainTabbarView()
             } else {
                 LoginView(isLogedIn: $isLoggedIn, isSignedup: $isSignedUp)
             }
